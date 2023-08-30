@@ -3,7 +3,7 @@ Introducción a las Ciencias de la Computación
 
 Temario
 1. Motivación
-2. Introducción (Saber contar-calcular. Sistemas numéricos. etc)
+2. [Introducción] (Saber contar-calcular. Sistemas numéricos. etc) (presentaciones/introduccion.md)
 3. Análisis y Diseño Orientado a Objetos
 4. Clases y objetos en Java
 5. Tipos de datos, expresiones y flujo de control
