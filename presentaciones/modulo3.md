@@ -1,5 +1,6 @@
-## Semana 3
-### Sesión 2 (teoria)
+# Semana 3
+## Sesión 2 
+### Teoria
 
 #### El paradigma de programación orientado a objetos
 
@@ -15,4 +16,6 @@ Herencia
 Polimorfismo
 
 ### Ejercicios teoria
+
 Ver un ejemplo (tal vez el de las derivadas de polinomios de grado k), y bosquejarlo con este paradigma, definiendo clases, empezar el algoritmo creando objetos de las clases definidas y mandar a llamar métodos y mensajes
+Poner acá el ejemplo y su desglose:
