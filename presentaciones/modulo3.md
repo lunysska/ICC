@@ -1,8 +1,10 @@
-# Semana 3
-## Sesión 2 
-### Teoria
+# Módulo 3.Análisis y Diseño Orientado a Objetos
 
-#### El paradigma de programación orientado a objetos
+## Semana 3
+### Sesión 2 
+#### Teoria
+
+##### El paradigma de programación orientado a objetos
 
 La definición de:
 Clases
@@ -15,13 +17,13 @@ Encapsulación
 Herencia
 Polimorfismo
 
-### Ejercicios teoria
+#### Ejercicios teoria
 
 Ver un ejemplo (tal vez el de las derivadas de polinomios de grado k), y bosquejarlo con este paradigma, definiendo clases, empezar el algoritmo creando objetos de las clases definidas y mandar a llamar métodos y mensajes
 
-# Semana 4
-## Sesión 1 (ayudantía de teoría)
-### Ejercicio: Derivada de un polinomio de grado k
+## Semana 4
+### Sesión 1 (ayudantía de teoría)
+#### Ejercicio: Derivada de un polinomio de grado k
 Bosquejar el algoritmo para calcular la derivada de un polinomio de grado k empleando Programación Orientada a Objetos.
 - Definición de polinomio.
 - Derivada de un polinomio (fórmula y ejemplos).
