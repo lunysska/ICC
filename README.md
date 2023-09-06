@@ -5,7 +5,7 @@ Temario
 1. Motivación
 2. [Introducción](presentaciones/introduccion.md)
 3. [Análisis y Diseño Orientado a Objetos](presentaciones/modulo3.md)
-4. Clases y objetos en Java
+4. [Clases y objetos en Java](presentaciones/modulo4.md)
 5. Tipos de datos, expresiones y flujo de control
 6. Arreglos
 7. Cadenas
