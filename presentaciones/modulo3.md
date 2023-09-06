@@ -50,3 +50,26 @@ Métodos de la clase Polinomio:
     \+ multiplica()  
     \+ evalua(x)  
 Se comenzó a trabajar el pseudocódigo del método deriva(), pero quedó inconcluso.
+
+### Sesión 1: Teoría
+#### Tema:  Las características del PPOO
+
+* atributos: caracteristicas de las clases
+* métodos: acciones que los objetos de una clase realizan.
+
+- abstracción
+- encapsulacion
+- herencia
+- polimorfismo
+
+#### Tema: Atributos de la clase
+
+- tipos de datos, qué son, para qué sirven.
+- lenguajes de programación tipificados, no-tipificados (qué pasa con el manejo de la memoria).
+- tipos de datos en Java: tipos de datos primitivos y clases
+- ejemplos de construcción de clase con atributos
+Clase Perro{
+    int edad;
+    char sexo;
+    float peso;
+}
