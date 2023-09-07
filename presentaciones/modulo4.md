@@ -21,3 +21,35 @@ class Perro{
 
 ### Sesion 2. Ayudantía Teoría
 Más ejemplos de definición de clases, en diseño, con atributos primitivos, podría ser la continuación de la clase Polinomio, y así
+
+### Ejemplos vistos en la Ayudantía de Teoría
+
+Ejemplo 1: Clase Vector2D
+Atributos:  
+    -- x: double  
+    -- y: double  
+Métodos:  
+    \+ norma(): double  
+    \+ anguloRadianes(): double  
+    \+ anguloGrados(): double
+    \+ ortogonal(v: Vector2D): bool
+    \+ suma(v: Vector2D): Vector2D
+    \+ productoPunto(v: Vector2D): double
+    \+ resta(v: Vector2D): Vector2D
+    \+ productorPorEscalar(a: double): Vector2D
+
+Ejemplo 2: Clase Ventana
+Atributos:
+    -- x: int  
+    -- y: int
+    -- l: int
+    -- h: int
+(Alternativamente podrían ser x_1, y_1, x_2, y_2)
+Métodos:
+    \+ agrandar(p: int, q: int)
+    \+ pantallaCompleta()
+    \+ minimizar()
+    \+priorizar()
+    \+mover()
+    \+cerrar()
+     
