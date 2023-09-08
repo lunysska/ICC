@@ -1,8 +1,8 @@
 # Módulo 4. Clases y objetos en Java
 ## Semana 4
-### Sesión 1. Teoria
 
-### Tema: Clases en Java
+### Sesión 1. Teoria
+#### Tema: Clases en Java
 - Uso de la palabra reservada **class**
 - Convenciones para el nombrado de clases
 - bloque de clases
@@ -58,3 +58,21 @@ Métodos:
     \+mover()  
     \+cerrar()  
      
+
+### Sesion 2. Teoría
+
+#### Tema: String no es un tipo básico. Es una clase
+#### Tema: Presentación del sistema de semestre
+- Inventario
+- Qué clase es la más básica: Producto
+- Propuesta básica de clase Producto:
+  
+```java
+Archivo: Producto.java
+class Producto {
+    String nombre;
+    float precio;
+    char tipo;
+}
+```
+###
