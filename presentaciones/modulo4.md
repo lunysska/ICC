@@ -14,7 +14,7 @@
 - tipos de datos en Java: tipos de datos primitivos y clases
 - ejemplos de construcción de clase con atributos primitivos:
 ```java
-class Perro{
+class Perro {
     int edad;
     char sexo;
     float peso;
