@@ -8,7 +8,7 @@
 - bloque de clases
 
 #### Tema: Atributos de la clase
-
+- el *;* es el fin de la expresión
 - tipos de datos, qué son, para qué sirven.
 - lenguajes de programación tipificados, no-tipificados (qué pasa con el manejo de la memoria).
 - tipos de datos en Java: tipos de datos primitivos y clases
@@ -75,7 +75,7 @@ class Producto {
     char tipo;
 }
 ```
-### Tema: el método main
+#### Tema: el método main
 - Clase de pruebas.
 - Se debe crear una clase de pruebas para cada prueba de clase a realizar.
 - Generar el archivo: *PruebaProducto.java*
@@ -88,4 +88,42 @@ class PruebaProducto {
 }
 ```
 
+#### Tema: creando objetos en Java
+- el uso de el operador *new*
+```java
+class PruebaProducto {
+    public static void main( String args[]){
+        Producto producto1 = new Producto();
+    }
+}
+```
 
+ #### Tema: el operador *.*
+- asignando valores a los atributos del objeto
+```java
+class PruebaProducto {
+    public static void main( String args[]){
+        Producto producto1 = new Producto();
+        producto1.nombre = "borrador";
+        producto1.precio = 12.45;
+        producto1.tipo = 'P';
+    }
+}
+```
+
+#### Tema: comunicación con la salida estandar.
+- *System.out.println()*
+- concatenando cadenas para el formato de la salida estandar
+```java
+class PruebaProducto {
+    public static void main( String args[]){
+        Producto producto1 = new Producto();
+        producto1.nombre = "borrador";
+        producto1.precio = 12.45;
+        producto1.tipo = 'P';
+        System.out.println("El nombre es:"+producto1.nombre);
+        System.out.println("El precio es:"+producto1.precio);
+        System.out.println("El tipo es:"+producto1.tipo);
+    }
+}
+``` 
