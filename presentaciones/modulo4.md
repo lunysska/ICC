@@ -65,14 +65,26 @@ Métodos:
 #### Tema: Presentación del sistema de semestre
 - Inventario
 - Qué clase es la más básica: Producto
-- Propuesta básica de clase Producto:
+- Propuesta básica de clase Producto. Generar un archivo *Producto.java*
   
 ```java
-Archivo: Producto.java
 class Producto {
     String nombre;
     float precio;
     char tipo;
 }
 ```
-###
+### Tema: el método main
+- Clase de pruebas.
+- Se debe crear una clase de pruebas para cada prueba de clase a realizar.
+- Generar el archivo: *PruebaProducto.java*
+- El método *main*
+  
+```java
+class PruebaProducto {
+    public static void main( String args[]){
+    }
+}
+```
+
+
