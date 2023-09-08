@@ -21,6 +21,8 @@ class Perro{
 }
 ```
 
+#### Tema: Metodologías de programación
+- Seguimiento a metodologías ágiles de programación
 
 ### Sesion 2. Ayudantía Teoría
 Más ejemplos de definición de clases, en diseño, con atributos primitivos, podría ser la continuación de la clase Polinomio, y así
