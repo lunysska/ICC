@@ -13,7 +13,7 @@
 - lenguajes de programación tipificados, no-tipificados (qué pasa con el manejo de la memoria).
 - tipos de datos en Java: tipos de datos primitivos y clases
 - ejemplos de construcción de clase con atributos primitivos:
-```
+```java
 class Perro{
     int edad;
     char sexo;
