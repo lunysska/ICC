@@ -50,7 +50,7 @@ Atributos:
     -- y: int  
     -- l: int  
     -- h: int  
-(Alternativamente podrían ser x_1, y_1, x_2, y_2)  
+(Alternativamente podrían ser x1, y1, x2, y2)  
 Métodos:  
     \+ agrandar(p: int, q: int)  
     \+ pantallaCompleta()  
