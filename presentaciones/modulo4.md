@@ -28,7 +28,7 @@ class Perro {
 ### Sesion 2. Ayudantía Teoría
 Más ejemplos de definición de clases, en diseño, con atributos primitivos, podría ser la continuación de la clase Polinomio, y así
 
-### Ejemplos vistos en la Ayudantía de Teoría
+#### Ejemplos vistos en la Ayudantía de Teoría
 
 Ejemplo 1: Clase Vector2D
 Atributos:  
@@ -126,4 +126,60 @@ class PruebaProducto {
         System.out.println("El tipo es:"+producto1.tipo);
     }
 }
-``` 
+```
+
+### Sesion 2. Ayudantía Teoría
+
+  1. Ver de manera general una introducción a tipos de datos, para poder usarlos de manera general en diferentes clases básicas de Java.
+  2. Ver de manera muy general el concepto de expresiones, para poderlas usar de forma general en la definición de clases básicas en Java.
+  3. Mostrar otros ejemplos de clases donde usen atributos de tipos variados y menos comunes de uso. Y donde empiecen a usar algunas expresiones que usen algunos operadores básicos.
+
+## Semana 4
+### Sesión 1. Teoría
+#### Tema: Encapsulacion 
+- concepto teórico
+- en código:
+```java
+private
+public
+```
+- El acceso a atributos se restringe cuando se  cambian a private
+- pero como aun se tiene que poder modificar los valores de los atributos, se busca algun otro mecanismo para lograrlo. Y se logra por medio de un metodo.
+```java
+public void  setAtributo(tipoDeAtributo valor{ atributo = valor }
+```
+- el nombrado de los metodos es una convencion, no error sintactico.
+- se conocen como setters o metodos de modificacion
+- de esta manera se logra ese codigo
+```java
+class Producto {
+    private String nombre;
+    private float precio;
+    private char tipo;
+
+    public void  setNombre(String n){
+        nombre = valor;
+    }
+    public void  setPrecio(String p){
+        precio = p;
+    }
+    public void  setTipo(char t){
+        tipo = t;
+    }
+}
+```
+- por supuesto la clase de prueba tiene que cambiar, ya que la manera en que estaba funcionando en la versión anterior, ahora ya no funcionaría.
+- ¿cómo quedaria?
+
+#### Tema: Comunicación con la salida estándar en un método. 
+* ahora la comunicacion a la pantalla tampoco se logra como se tenia, pues el acceso de los atributos se encuentra restringido.
+* Una manera de hacerlo, con mejor diseño, es hacer un método que haga este proceso.
+```java
+public void imprimirDetalles(){
+        System.out.println("El nombre es:"+nombre);
+        System.out.println("El precio es:"+.precio);
+        System.out.println("El tipo es:"+.tipo);
+}
+```
+- por supuesto también debe cambiar la clase prueba para que funcione con estos cambios.
+- ¿cómo quedaria?
