@@ -183,3 +183,117 @@ public void imprimirDetalles(){
 ```
 - por supuesto también debe cambiar la clase prueba para que funcione con estos cambios.
 - ¿cómo quedaria?
+
+## Semana 6
+### Sesión 1. Ayudantía de Teoría
+#### Tema: Encapsulacion
+- Ejemplo: clase RegistroMedico, que registrará el perfil médico de un paciente en un consultorio. Por sencillez se consideran solo cinco atributos.
+
+```java
+class RegistroMedico{
+    private String nombre, apellidos;
+    private int edad, peso;
+    private double estatura;
+}  
+```
+- Se usará una clase PruebaRegistroMedico para hacer las pruebas. ¿Qué ocurre con lo siguiente al intentar compilar?
+```java
+public class PruebaRegistroMedico{
+
+    public static void main(String[] args){
+    
+        RegistroMedico rm = new RegistroMedico();        
+        rm.edad = 20;
+
+     }
+}
+```
+- Se producirá un error: PruebaRegistroMedico.java:15: error: edad has private access in RegistroMedico.
+- Se modifica la clase RegistroMedico con un setter.
+```java
+    public void setEdad(int e){
+        edad = e;
+    }
+```
+- Ahora se puede hacer:
+```java
+        rm.setEdad(20);
+```
+- Pero si se hace lo siguiente:
+```java
+        System.out.println(rm.edad);
+```
+- Se producirá un error nuevamente: PruebaRegistroMedico.java:26: error: edad has private access in RegistroMedico.
+- Se verán 3 formas diferentes de manejarlo.
+- Forma 1: Con un getter.
+```java
+    public int getEdad(){
+        return edad;
+    }
+```
+- Ahora puede hacerse:
+```java
+        System.out.println(rm.getEdad());
+```
+- Forma 2: Con un método para imprimir la edad.
+```java
+    public void imprimeEdad(){
+        System.out.println(edad);
+    }
+```
+- Ahora puede hacerse:
+```java
+        rm.imprimeEdad();
+```
+- Forma 3: Usando el getter y guardando la edad en una variable auxiliar.
+```java
+        int edad1;
+        edad1 = rm.getEdad();
+        System.out.println(edad1);
+```
+- Se agregan a la clase RegistroMedico setters y un método para mostrar todos los atributos:
+```java
+    public void setNombre(String n){
+        nombre = n;
+    }
+    
+    public void setApellidos(String a){
+        apellidos = a;
+    }
+
+    public void setPeso(int p){
+        peso = p;
+    }
+    
+    public void setEstatura(double e){
+        estatura = e;
+    }
+    
+    public void imprimeDetalles(){
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Apellidos: "+apellidos);
+        System.out.println("Edad: "+edad);
+        System.out.println("Peso: "+peso);
+        System.out.println("Estatura: "+estatura);
+    }    
+```
+- Se prueba el funcionamiento con lo siguiente en la clase PruebaRegistroMedico:
+```java
+        rm.setNombre("Mario");        
+        rm.setApellidos("Moncayo Tapia");
+        rm.setPeso(70);
+        rm.setEstatura(1.70);
+
+        rm.imprimeDetalles();
+```
+- Se observa que la estatura se imprime como "Estatura: 1.7". ¿Cómo especificar el número de digitos después del punto?
+- Uso de System.out.printf.
+```java
+    public void imprimeEstatura(){
+        System.out.printf("Estatura: %.2f \n",estatura);
+    }
+```
+- Se puede probar ahora haciendo:
+```java
+        rm.imprimeEstatura();
+```
