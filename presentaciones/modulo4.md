@@ -297,3 +297,82 @@ public class PruebaRegistroMedico{
 ```java
         rm.imprimeEstatura();
 ```
+
+## Semana 6
+### Sesión 2. Ayudantía de Teoría
+#### Tema: El método printf
+- Sintaxis:  
+> **System.out.printf("Cadena a formatear",argumentos);**  
+
+Los *argumentos* son literales o variables, que van asociados con *especificadores de formato* incluidos en la *cadena a formatear* . Por ejemplo, en el código de la sesión anterior:
+```java
+    public void imprimeEstatura(){
+        System.out.printf("Estatura: %.2f \n",estatura);
+    }
+```
+
+- Se tiene el *especificador de formato* **%.2f**, que indica el formato que se le dará a la variable *estatura* (un *double* que será mostrado con dos decimales después del punto).  
+- Sintaxis de los *especificadores de formato*:
+> **%\<banderas>\<ancho>\<.precisión>[caracter de conversión]**  
+
+En la expresión anterior, *banderas*, *ancho* y *.precisión* son opcionales.
+
+- Banderas más comunes:
+
+|Bandera|Función|
+|--------|--------|
+|    -    |    Justificar a la izquierda    |
+|    +    |    Imprimir signo (- o +), para valores numéricos    |
+|    0    |    Llenar el ancho con ceros a la izquierda, para valores numéricos    |
+|    ,    |    Incluir las *comas de los miles* en valores numéricos    |
+|    espacio (' ')    |    Imprimir el signo - en números negativos y un espacio previo en positivos, para valores numéricos.    |
+
+- Caracteres de conversión más comunes:
+
+|Caracter|Uso|
+|--------|--------|
+|    d    |    Enteros decimales (byte, short, int, long)    |
+|    f    |    Números de punto flotante (float, double)    |
+|    c    |    Caracter, C para pasar a mayúscula (char)    |
+|    s    |    String, S para pasar la cadena completa a mayúsculas    |
+|    n    |    Salto de línea (específico de la plataforma)    |
+- Ejemplo: Implementar un método en la clase RegistroMedico para imprimir el nombre completo (nombre y apellidos) en mayúsculas, incluyendo el salto de línea.
+- Solución:
+```java
+    public void imprimeNombreCompletoMayusculas(){
+        System.out.printf("%S %S%n",nombre,apellidos);
+    }
+```
+#### Tema: Constructores
+- Ejemplo: constructor básico para la clase RegistroMedico.
+```java
+    public RegistroMedico(String n, String a, int e, int p, double es){
+        nombre = n;
+        apellidos = a;
+        edad = e;
+        peso = p;
+        estatura = es;
+    }
+```
+- En la clase PruebaRegistroMedico podemos ahora crear un nuevo objeto como:
+```java
+        RegistroMedico rm2 = new RegistroMedico("Arturo","Benavides Gama",21,80,1.75);
+```
+- Consideremos ahora un atributo adicional *IMC* (Índice de Masa Corporal) en nuestra clase RegistroMedico:
+```java
+    double IMC;
+```
+- Por definición se tiene que:  
+$IMC = peso / estatura^2$  
+- Se modifica el constructor para que inicialice el *IMC* adecuadamente:
+```java
+    public RegistroMedico(String n, String a, int e, int p, double es){
+        nombre = n;
+        apellidos = a;
+        edad = e;
+        peso = p;
+        estatura = es;
+        IMC = peso / (estatura*estatura);
+    }
+```
+- Se observa que en la sentencia que calcula el *IMC* se está empleando un casting implícito.
