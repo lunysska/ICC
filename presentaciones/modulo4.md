@@ -134,7 +134,7 @@ class PruebaProducto {
   2. Ver de manera muy general el concepto de expresiones, para poderlas usar de forma general en la definición de clases básicas en Java.
   3. Mostrar otros ejemplos de clases donde usen atributos de tipos variados y menos comunes de uso. Y donde empiecen a usar algunas expresiones que usen algunos operadores básicos.
 
-## Semana 4
+## Semana 5
 ### Sesión 1. Teoría
 #### Tema: Encapsulacion 
 - concepto teórico
@@ -297,6 +297,16 @@ public class PruebaRegistroMedico{
 ```java
         rm.imprimeEstatura();
 ```
+
+### Sesión 1. Teoría
+#### Tema: Hoy vi metodos constructores
+#### Tema: El operador new y el manejo de memoria
+#### Tema: Coml se define el stack y el heap
+#### Tema: Muchos objetos de una misma clase y sus respectivos espacios en memoria
+#### Tema: Modificacion de los.valores de atributos con el.operador punto
+#### Tema: Repasamos la firma de un metodo. Para mejorar la intro
+#### Tema: El constructor por omision y su perdida
+#### Tema: Y vimos diferentes constructores por sustitucion, es decir, uno sustituye al otro
 
 ### Sesión 2. Ayudantía de Teoría
 #### Tema: El método printf
