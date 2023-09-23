@@ -385,3 +385,25 @@ $IMC = peso / estatura^2$
     }
 ```
 - Se observa que en la sentencia que calcula el *IMC* se está empleando un casting implícito.
+
+### Sesión 2. Teoría
+#### Tema:
+### Sesión 1. Teoría
+#### Tema:Varias formas de crear objetos en una misma clase
+```java
+public Producto( string n, float p, char t){
+    nombre = n;
+    precio = p;
+    tipo = t;
+}
+```
+
+#### Tema: El constructor por omision
+#### Tema: Metodos
+- Que son
+- Su firma
+- El identificador unico
+- Los argumentos
+- Tipos de metodos: constructores,  setters, getters, de control, auxiliares
+- La sobrecarga de metodos
+- el valor de retorno de un método
