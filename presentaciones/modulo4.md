@@ -298,7 +298,6 @@ public class PruebaRegistroMedico{
         rm.imprimeEstatura();
 ```
 
-## Semana 6
 ### Sesión 2. Ayudantía de Teoría
 #### Tema: El método printf
 - Sintaxis:  
