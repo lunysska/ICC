@@ -407,3 +407,20 @@ public Producto( string n, float p, char t){
 - Tipos de metodos: constructores,  setters, getters, de control, auxiliares
 - La sobrecarga de metodos
 - el valor de retorno de un método
+
+## Semana 7
+### Sesión 1. Ayudantía de Teoría
+#### Tema: El método printf
+- Ejemplo: Definir un método en la clase RegistroMedico que imprima el nombre completo con el siguiente formato:  
+<pre>
+Nombre:               &lt;Nombre&gt;
+Apellidos:         &lt;Apellidos&gt;
+</pre>
+donde se imprime el texto en un espacio de exactamente 30 caracteres de ancho.
+- Primera aproximación:
+```java
+    public void imprimeNombreCompleto30Espacios(){
+        System.out.printf("Nombre: %22s%n",nombre);
+        System.out.printf("Apellidos: %19s%n",apellidos);
+    }
+```
