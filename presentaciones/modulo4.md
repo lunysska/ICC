@@ -411,16 +411,58 @@ public Producto( string n, float p, char t){
 ## Semana 7
 ### Sesión 1. Ayudantía de Teoría
 #### Tema: El método printf
-- Ejemplo: Definir un método en la clase RegistroMedico que imprima el nombre completo con el siguiente formato:  
+- **Ejemplo**: Definir un método en la clase RegistroMedico que imprima el nombre completo con el siguiente formato:  
 <pre>
 Nombre:               &lt;Nombre&gt;
 Apellidos:         &lt;Apellidos&gt;
 </pre>
 donde se imprime el texto en un espacio de exactamente 30 caracteres de ancho.
-- Primera aproximación:
+- Primera aproximación (código en RegistroMedico):
 ```java
     public void imprimeNombreCompleto30Espacios(){
         System.out.printf("Nombre: %22s%n",nombre);
         System.out.printf("Apellidos: %19s%n",apellidos);
     }
 ```
+- Sin embargo, con este código se presentará un problema con nombres o apellidos demasiado largos: se excederá el espacio de 30 caracteres (el ancho indicado es un mínimo). Solución: usar la precisión, que en *Strings* indica longitud máxima de impresión.
+```java
+    public void imprimeNombreCompleto30Espacios(){
+        System.out.printf("Nombre: %22.22s%n",nombre);
+        System.out.printf("Apellidos: %19.19s%n",apellidos);
+    }
+```
+- Con este código se cortará la impresión cuando se haya alcanzado el máximo de caracteres, por lo que se asegura que el texto ocupará exactamente 30 caracteres.
+#### Tema: Sobrecarga de constructores
+- **Ejemplo**: Definir un constructor adicional en la clase RegistroMedico que reciba únicamente como parámetros el nombre y apellidos.
+```java
+    public RegistroMedico(String n, String a){
+        nombre = n;
+        apellidos = a;
+    }
+```
+- Al generar un objeto (códgio en PruebaRegistroMedico):
+```java
+        RegistroMedico rm4 = new RegistroMedico("Pablo","Lara Guzman");
+```
+el resto de los atributos tendrán inicialmente sus valores por defecto (que es 0 en el caso de tipos primitivos numéricos).
+- **Ejemplo**: Definir un constructor adicional en la clase RegistroMedico que reciba el mismo número de parámetros que el primer constructor definido, pero donde el peso recibido sea de tipo double.
+```java
+    public RegistroMedico(String n, String a, int e, double p, double es){
+        nombre = n;
+        apellidos = a;
+        edad = e;
+        peso = (int)p;
+        estatura = es;
+        IMC = peso / (estatura*estatura);
+    }
+```
+-**Observación**: Al hacer el casting para pasar el peso a *int*, el valor se trunca. Para redondear al entero más cercano puede hacerse en su lugar:
+```java
+        peso = (int)(Math.round(p));
+```
+donde se usa el método *Math.round()*.
+- Puede ahora generarse un objeto de tipo *RegistroMedico* enviando como parámetro un *double* para el peso (código en PruebaRegistroMedico):
+```java
+        RegistroMedico rm5 = new RegistroMedico("Laura","Altamira Quintanar",24,72.8,1.65);
+``` 
+
