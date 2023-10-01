@@ -1,7 +1,7 @@
 # Módulo 4. Clases y objetos en Java
 ## Semana 4
 
-### Sesión 1. Teoria
+9### Sesión 1. Teoria
 #### Tema: Clases en Java
 - Uso de la palabra reservada **class**
 - Convenciones para el nombrado de clases
@@ -387,8 +387,6 @@ $IMC = peso / estatura^2$
 - Se observa que en la sentencia que calcula el *IMC* se está empleando un casting implícito.
 
 ### Sesión 2. Teoría
-#### Tema:
-### Sesión 1. Teoría
 #### Tema:Varias formas de crear objetos en una misma clase
 ```java
 public Producto( string n, float p, char t){
@@ -464,5 +462,14 @@ donde se usa el método *Math.round()*.
 - Puede ahora generarse un objeto de tipo *RegistroMedico* enviando como parámetro un *double* para el peso (código en PruebaRegistroMedico):
 ```java
         RegistroMedico rm5 = new RegistroMedico("Laura","Altamira Quintanar",24,72.8,1.65);
-``` 
+```
 
+### Sesión 2. Teoría
+
+Métodos:
+-Void o
+El tipo de retorno. La coincidencia de tipos: entre la firma y el valor de retorno.
+- package
+- import
+- El api de java. Jdk.
+- 
