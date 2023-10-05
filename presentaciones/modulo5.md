@@ -124,3 +124,189 @@ densidad = (float)(masa / volumen);
 ```java
      char c4 = '\u00a9';
 ```
+## Semana 8
+
+### Sesión 2. Ayudantía de Teoria
+#### Tema: Literales en Java (continuación)
+- Literales de tipo *String*. Se especifican entre comillas dobles. Pueden incluir secuencias de escape y caracteres indicados con su código *Unicode* en *UTF-16* de 16 o 32 bits.
+- Secuencias de escape comunes:
+
+|Nombre|Representación|ASCII|
+|--------|--------|--------|
+|    Salto de línea    |    \n    | 10 |
+|    Tabulación    |    \t    | 9 |
+|    Comilla simple    |    \\'    | 39 |
+|    Comillas dobles    |    \\"    | 34 |
+|    Diagonal invertida    |    \\\    | 92 |
+|    Caracter nulo    |    \0    | 0 |
+- **Ejemplo 1**: Uso de secuencias de escape.
+```java
+public class Literales{
+
+    public static void main(String[] args){
+    
+     String cadenaConSecuenciasDeEscape="\tTexto tabulado.\nComilla simple: \' \nComillas dobles: \" \nDiagonal invertida: \\ \nCaracter nulo: \0";
+    
+     System.out.println(cadenaConSecuenciasDeEscape);
+     
+    }
+
+}
+```
+- **Ejemplo 2**: Impresión de emojis. En *UTF-16* (codificación empleada en Java) los emojis emplean códigos *Unicode* de dos bloques de 16 bits. Pueden expresarse con la sintaxis “\uxxxx\uxxxx”, donde cada *x* es un dígito hexadecimal.
+```java
+public class Literales{
+
+    public static void main(String[] args){
+    
+     System.out.println("\uD83D\uDE00");     
+     System.out.println("\uD83D\uDE01");
+     System.out.println("\uD83D\uDE02");
+     System.out.println("\uD83D\uDE03");
+     System.out.println("\uD83D\uDE04");
+     System.out.println("\uD83D\uDE05");
+     System.out.println("\uD83D\uDE06");
+     System.out.println("\uD83D\uDE07");
+     System.out.println("\uD83D\uDE08");
+     System.out.println("\uD83D\uDE09");
+     
+    }
+
+}
+```
+- Literales booleanas. Sólo pueden tomar los valores *true* o *false* (verdadero o falso).
+- **Ejemplo 1**:
+```java
+public class Literales{
+
+    public static void main(String[] args){
+    
+     boolean b1 = true;
+     boolean b2 = false;
+     
+     System.out.println(b1);
+     System.out.println(b2);
+     System.out.println(true);
+          
+    }
+
+}
+```
+- Literal nula. Un objeto en Java puede inicializarse en *null*.
+```java
+public class Literales{
+
+    int longitud;
+
+    public static void main(String[] args){
+    
+     Literales l2 = null;
+           
+    }
+
+}
+```
+- *null* es una literal que indica que la variable apunta a ningún objeto. Tratar de acceder a los atributos o métodos de un objeto nulo generará una excepción de puntero nulo (*NullPointerException*).
+- **Ejemplo 1**:
+```java
+public class Literales{
+
+    int longitud;
+
+    public static void main(String[] args){
+    
+     Literales l2 = null;
+     
+     System.out.println(l2.longitud);
+           
+    }
+
+}
+```
+- Al intentar compilar el código anterior se producirá un error "java.lang.NullPointerException".
+#### Tema: Errores de incompatibilidad de tipos al invocar métodos
+- Los errores de incompatibilidad de tipos también pueden producirse en expresiones que incluyen llamadas a métodos.
+- **Ejemplo 1**: En la clase *RegistroMedico*, trabajada en sesiones anteriores, se tiene un método *getEstatura()* de tipo *double*:
+```java
+    public double getEstatura(){
+        return estatura;
+    }
+```
+- Si en la clase *PruebaRegistroMedico* se intenta hacer:
+```java
+public class PruebaRegistroMedico{
+
+    public static void main(String[] args){
+        
+        RegistroMedico rm5 = new RegistroMedico("Laura","Altamira Quintanar",24,72.8,1.65);
+        
+        rm5.imprimeDetalles();
+                
+        int estaturaLaura = rm5.getEstatura();
+        
+    }
+
+}
+```
+- Se producirá un error "incompatible types: possible lossy conversion from double to int". Esto se soluciona empleando una variable *double*:
+```java
+public class PruebaRegistroMedico{
+
+    public static void main(String[] args){
+        
+        RegistroMedico rm5 = new RegistroMedico("Laura","Altamira Quintanar",24,72.8,1.65);
+        
+        rm5.imprimeDetalles();
+                
+        double estaturaLaura = rm5.getEstatura();
+        System.out.println(estaturaLaura);
+        
+    }
+
+}
+```
+- **Ejemplo 2**: En esta misma clase (*RegistroMedico*), obsérvese que se tiene un método getNombre() de tipo String y un método imprimeNombre() de tipo void.
+```java
+    public String getNombre(){
+        return nombre;
+    }
+    
+    public void imprimeNombre(){
+        System.out.println(nombre);
+    }
+```
+- Si en la clase *PruebaRegistroMedico* se hace:
+```java
+public class PruebaRegistroMedico{
+
+    public static void main(String[] args){
+        
+        RegistroMedico rm5 = new RegistroMedico("Laura","Altamira Quintanar",24,72.8,1.65);
+        
+        rm5.imprimeDetalles();
+                
+        String nombreLaura = rm5.imprimeNombre();
+        
+    }
+
+}
+```
+- Al intentar compilar se producirá un error "incompatible types: void cannot be converted to String". Basta con usar el método correcto para solucionar este error:
+```java
+public class PruebaRegistroMedico{
+
+    public static void main(String[] args){
+        
+        RegistroMedico rm5 = new RegistroMedico("Laura","Altamira Quintanar",24,72.8,1.65);
+        
+        rm5.imprimeDetalles();
+                
+        String nombreLaura = rm5.getNombre();
+        System.out.println(nombreLaura);
+        
+    }
+
+}
+```
+
+
