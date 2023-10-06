@@ -1,7 +1,7 @@
 # Módulo 4. Clases y objetos en Java
 ## Semana 4
 
-9### Sesión 1. Teoria
+### Sesión 1. Teoria
 #### Tema: Clases en Java
 - Uso de la palabra reservada **class**
 - Convenciones para el nombrado de clases
@@ -467,9 +467,20 @@ donde se usa el método *Math.round()*.
 ### Sesión 2. Teoría
 
 Métodos:
--Void o
+-**void** o
 El tipo de retorno. La coincidencia de tipos: entre la firma y el valor de retorno.
 - package
 - import
 - El api de java. Jdk.
-- 
+
+## Semana 8
+### Sesión 1. (No hubo clase)
+### Sesión 2. Teoría
+Análisis de robustez, para usar dentro de la generación de paquetes de un proyecto
+Se tienen tres distintos estereotipos:
+- Entidad
+- Borde
+- Control
+
+Referencia: https://academicos.azc.uam.mx/jfg/diapositivas/adsi/Unidad_7.pdf
+
