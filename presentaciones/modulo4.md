@@ -476,7 +476,9 @@ El tipo de retorno. La coincidencia de tipos: entre la firma y el valor de retor
 ## Semana 8
 ### Sesión 1. (No hubo clase)
 ### Sesión 2. Teoría
+
 Análisis de robustez, para usar dentro de la generación de paquetes de un proyecto
+
 Se tienen tres distintos estereotipos:
 - Entidad
 - Borde
