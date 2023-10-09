@@ -128,6 +128,7 @@ densidad = (float)(masa / volumen);
 
 ### Sesión 2. Ayudantía de Teoria
 #### Tema: Literales en Java (continuación)
+[Dispositivas de la sesión](modulo5/diapositivasOctubre04.pdf)
 - Literales de tipo *String*. Se especifican entre comillas dobles. Pueden incluir secuencias de escape y caracteres indicados con su código *Unicode* en *UTF-16* de 16 o 32 bits.
 - Secuencias de escape comunes:
 
