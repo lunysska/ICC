@@ -7,7 +7,7 @@ Temario
 3. [Análisis y Diseño Orientado a Objetos](presentaciones/modulo3.md)
 4. [Clases y objetos en Java](presentaciones/modulo4.md)
 5. [Tipos de datos, expresiones y flujo de control](presentaciones/modulo5.md)
-6. Arreglos
+6. [Arreglos](presentaciones/modulo6.md)
 7. Cadenas
 8. Herencia y diseño de clases
 9. Manejo de errores
