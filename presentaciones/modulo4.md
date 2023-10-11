@@ -486,3 +486,57 @@ Se tienen tres distintos estereotipos:
 
 Referencia: https://academicos.azc.uam.mx/jfg/diapositivas/adsi/Unidad_7.pdf
 
+## Semana 9
+### Sesión 1. Teoría
+#### Tema. Relaciones entre clases
+##### Relaciones uno a uno.
+Ejemplo:
+```java
+clase Fecha{
+    private int dia;
+    private int mes;
+    private int año;
+
+    //constructores
+
+    //setters
+
+    //getters
+
+    //imprime detalles
+}
+```
+
+```java
+// solo se resaltan las partes que tienen que ver
+//con los cambios que requieren el haber agregado un atributo de tipo Fecha
+clase Producto{
+    // todos los atributos
+    private Fecha fechaIngreso;
+
+    //constructores
+    public Producto( ..., Fecha f){
+        fechaIngreso = f;
+    }
+
+    //setters
+    public void setFechaIngreso( Fecha f ){
+        fechaIngreso =  f;
+    }
+
+    //getters
+    public Fecha getFechaIngreso(){
+        return fechaIngreso;
+    }
+
+    //imprime detalles
+    public void imprimeDetalles(){
+        //todo el código que ya se tenía
+        //...
+        fechaIngreso.imprimeDetalles();
+    }
+}
+```
+
+
+
