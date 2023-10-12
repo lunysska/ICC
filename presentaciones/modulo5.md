@@ -310,3 +310,116 @@ public class PruebaRegistroMedico{
 }
 ```
 
+## Semana 9
+
+### Sesión 2: Ayudantía de Teoría
+#### Tema: Flujo de control
+#### Estructuras condicionales en Java
+- **if**: Sintaxis:
+if ( <Condición> ){
+	\<Sentencias>
+}
+- Ejemplo:
+```java
+        int edad = 20;
+        if(edad>=18){
+            System.out.println("Mayor de edad");
+        }
+```
+-**Observación**: La condición puede ser cualquier expresión booleana. Si el bloque de sentencias a ejecutar es de una sola sentencia, es opcional el uso de llaves. Por ejemplo, se puede usar:
+```java
+        if(edad>=18)
+            System.out.println("Mayor de edad");
+```
+- Sin embargo se recomienda usar siempre llaves.
+- **if-else**: Sintaxis:
+if ( <Condición> ){
+	\<Sentencias 1>
+}else{
+	\<Sentencias 2>
+}
+- Ejemplo:
+```java
+        if(edad>=18){
+            System.out.println("Mayor de edad");
+        }else{
+            System.out.println("Menor de edad");
+        }
+```
+-**if -else if**: Sintaxis:
+if ( <Condición 1> ){
+	\<Sentencias 1>
+}else if( < Condición 2> ){
+	\<Sentencias 2>
+}
+- Ejemplo:
+```java
+        if(edad<18){
+            System.out.println("Menor de edad");
+        }else if(edad<60){
+            System.out.println("Edad trabajadora");
+        }
+```
+-**if -else if-else**: Sintaxis:
+if ( <Condición 1> ){
+	\<Sentencias 1>
+}else if( < Condición 2> ){
+	\<Sentencias 2>
+}else{
+	\<Sentencias 3>
+}
+- Ejemplo:
+```java
+        if(edad<18){
+            System.out.println("Menor de edad");
+        }else if(edad<60){
+            System.out.println("Edad trabajadora");
+        }else{
+            System.out.println("Tercera edad");
+        }
+```
+-**if -else if-...-else**: Sintaxis:
+if ( <Condición 1> ){
+	\<Sentencias 1>
+}else if( < Condición 2> ){
+	\<Sentencias 2>
+}else if( <Condición 3> ){
+...
+}else{
+	\<Sentencias N>
+}
+- Ejemplo:
+```java
+        if(edad>=60){
+            System.out.println("Tercera edad");
+        }else if(edad>=18){
+            System.out.println("Edad trabajadora");
+        }else if(edad>=0){
+            System.out.println("Menor de edad");
+        }else{
+            System.out.println("Error: No puede tener edad negativa");
+        }
+```
+#### Tema: Uso de ifs anidados
+- El bloque de sentencias dentro de cualquiera de los casos de un if puede a su vez contener otros ifs.
+- **Ejemplo 1**:
+```java
+        if(edad>=18){
+        
+            if(edad>=60){
+                System.out.println("Tercera edad");
+            }else{
+                System.out.println("Mayor de edad");
+            }
+            
+        }else{
+            System.out.println("Menor de edad");
+        }
+```
+- Pueden tenerse estructuras condicionales equivalentes. Debe optarse por estructuras que sean claras, legibles y que sigan la lógica del problema.
+- **Ejemplo 2: Años bisiestos**.
+- **Año bisiesto**: Años que son múltiplos de 4, salvo los que son múltiplos de 100 pero no de 400.
+- Ejemplos de años NO bisiestos: 1601, 1602, 1700, 1800, 1900, 2001, 2002, 2003.
+- Ejemplos de años bisiestos; 1600, 1604, 1608, 1704, 1708, 2000, 2004, 2008. 
+- Ejercicio: Implementar un método booleano en Java que determine si un año es bisiesto o no.
+
