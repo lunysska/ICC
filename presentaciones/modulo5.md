@@ -423,3 +423,98 @@ if ( <Condición 1> ){
 - Ejemplos de años bisiestos; 1600, 1604, 1608, 1704, 1708, 2000, 2004, 2008. 
 - Ejercicio: Implementar un método booleano en Java que determine si un año es bisiesto o no.
 
+## Semana 10
+
+### Sesión 1: Ayudantía de Teoría
+#### Tema: Flujo de control
+#### Solución al ejercicio del método bisiesto
+- Una posible solución al ejercicio es la siguiente:
+```java
+    public static boolean bisiesto(int year){
+    
+        if(year % 4 == 0){
+        
+            if(year % 100 == 0){
+            
+                if(year % 400 == 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            
+            }else{
+                return true;
+            }
+        
+        }else{
+            return false;
+        }
+    
+    }
+```
+#### Tema: Ciclos
+#### Ciclo for
+- Un *ciclo for* en Java es una estructura de código que permite ejecutar un bloque de código en repetidas ocasiones.
+- Sintaxis:
+for( \<Inicialización de variables> ; \<Condición de continuidad> ; \<Actualización de variables> ){
+    \<Sentencias>
+} 
+- \<Inicialización de variables>: Se ejecuta una sola vez, al inicio del ciclo for. Suele contener la declaración e inicialización de una o más variables (suelen usarse las variables *i*, *j*, *k*).
+- \<Condición de continuidad>: Expresión booleana que se evalúa en cada iteración. Si el resultado es *true* se ejecuta el bloque de sentencias, si es *false* se termina la ejecución del ciclo for.
+- \<Actualización de variables>: Se ejecuta al final de cada iteración (después del bloque de sentencias y antes de una nueva evaluación de la condición de continuidad). Típicamente es un incremento o decremento de una o más variables.
+- \<Sentencias>: Bloque que se ejecuta en cada iteración. Las llaves que lo delimitan pueden omitirse si el bloque consta de una sola sentencia. Puede contener a su vez otros ciclos o condicionales, así como sentencias *break* o *continue* para modificar el flujo.
+- **Ejemplo 1**: Imprimir 5 veces "Hola mundo.".
+```java
+        for(int i = 1; i<=5; i++)
+            System.out.println("Hola mundo.");
+```
+- **Ejemplo 2**: Imprimir los primeros *n* números naturales.
+```java
+        int n = 5;
+        for(int i = 1; i<= n; i++)
+            System.out.println(i);
+```
+- Otra forma de implementarlo sería:
+```java
+        for(int i = 1, n = 5; i<= n; i++)
+            System.out.println(i);
+```
+- **Ejemplo 3**: Cuenta regresiva del 10 al 1.
+```java
+        for(int i = 10; i>=1; i-- )
+            System.out.println(i);
+```
+- **Ejemplo 4**: Contar cuántos números múltiplos de 3 hay en el intervalo [a, b].
+```java
+        int a = 20, b = 50, contador = 0;
+        for(int i = a; i <= b; i++){
+            if(i % 3 == 0)
+                contador++;
+        }
+        System.out.println(contador);
+```
+- **Ejemplo 5**: Calcular la suma de los primeros *n* números naturales.
+```java
+        int suma = 0, n = 100;
+        for(int i = 1; i <= n; i++)
+            suma = suma + i;
+        System.out.println(suma);
+```
+- **Ejemplo 6**: **Sucesión de Fibonacci**
+- La sucesión de Fibonacci es una sucesión infinita de números naturales definida como:
+- $f_1 = 1$
+- $f_2 = 1$
+- $f_{n+1} = f_n + f_{n-1}$
+- Es decir, cada término se construye como la suma de los dos anteriores, empezando con dos terminos iguales a uno. De este modo, la sucesión empieza con los números 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+- Alternativamente, en ocasiones se incluye en la sucesión $f_0 = 0$.
+- Implementar un ciclo for que imprima los primeros *n* términos de la sucesión de Fibonacci.
+```java
+        int fib = 1, aux = 0, aux2;
+        n = 10;
+        for(int i = 1; i <= n; i++){
+            System.out.println("Fibonacci "+i+": "+fib);
+            aux2 = fib + aux;
+            aux = fib;
+            fib = aux2;
+        }
+```
