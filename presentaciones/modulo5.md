@@ -518,3 +518,80 @@ for( \<Inicialización de variables> ; \<Condición de continuidad> ; \<Actualiz
             fib = aux2;
         }
 ```
+
+## Semana 10
+
+### Sesión 2: Ayudantía de Teoría
+#### Tema: Ciclo for (continuación)
+- **Ejemplo 7**: **Sucesión de Fibonacci con un arreglo**
+- Una forma alternativa de implementar la generación de los números de Fibonacci es con un arreglo lineal.
+```java
+        long[] f = new long[100];
+        int n = 20;
+        
+        f[0] = 0; // Esta linea no es necesaria
+        f[1] = 1;
+        
+        for(int i =2; i<=n ; i++)
+            f[i] = f[i-1] + f[i-2];
+        
+        for(int i = 1; i<= n; i++)
+            System.out.println("Fibonacci "+i+": "+f[i]);
+```
+#### Tema: Ciclos for anidados
+- Las sentencias cuya ejecución se repite dentro de un ciclo for pueden contener a su vez otros ciclos for. Es importante no repetir el nombre de las variables de iteración.
+- **Ejemplo 1**: **Tablas de multiplicar**
+- El siguiente código imprimirá las tablas de multiplicar con el formato $a*b = c$ para cada entrada (con $a$ y $b$ tomando los valores del 1 al 10).
+```java
+        for(int i = 1; i <= 10; i++){
+            for(int j = 1; j<= 10; j++){
+                System.out.print(i+"*"+j+"="+i*j+" ");
+            }
+            System.out.println();
+        }
+```
+- **Ejemplo 2**: **Triángulo de Pascal**
+- El *triángulo de Pascal* es un arreglo triangular de números ordenados en renglones que empieza como:
+```java
+                        1
+                    1       1
+                1       2       1
+            1       3       3       1
+        1       4       6       4       1
+    1       5      10      10       5        1
+1       6      15      20      15       6        1
+```
+- En cada renglón, pueden calcularse los nuevos elementos como la suma de los dos números que están arriba (los de los extremos son siempre unos). Estos números coinciden en cada renglón con los llamados *coeficientes binomiales*, que son los coeficientes de los términos que aparecen al desarrollar un binomio elevado a la *n-ésima* potencia.
+- El siguiente código calcula los primeros *n* renglones del triángulo de Pascal y los imprime:
+```java
+        long[][] pascal = new long[11][11];
+        n = 10;
+        for(int i = 1; i<=10; i++){ // Para inicializar los unos en los extremos
+            pascal[1][i]=1;
+            pascal[i][1]=1;
+        }
+        
+        for(int i=2;i<=n;i++) // Ciclos para generar los coeficientes
+            for(int j=2;j<=i;j++)
+                pascal[i-j+2][j]=pascal[i-j+1][j]+pascal[i-j+2][j-1];
+        
+        for(int i=1;i<=n;i++){ // Ciclos para la impresion
+            for(int j=1;j<=i;j++)
+                System.out.print(pascal[i-j+1][j]+" ");
+            System.out.println();
+        }
+```
+#### Tema: Uso de break y continue en ciclos for
+- La sentencia *break* permite terminar la ejecución de un ciclo for anticipadamente. Suele usarse dentro de condicionales.
+- **Ejemplo**: Retomando el *Ejemplo 5* de la sesión anterior, donde se calculaba la suma de los primeros *n* naturales, supóngase ahora que se desea averiguar en qué momento la suma iguala o supera las mil unidades. El siguiente código termina el ciclo cuando la suma ha alcanzado este punto, e imprime cuál fue el último entero que se agregó y a cuánto llegó la suma.
+```java
+        suma = 0;
+        for(int i=1;i<=100;i++){
+            suma = suma + i;
+            if(suma >= 1000){
+                System.out.println("Suma de 1 a "+i+": "+suma);
+                break;
+            }
+        }
+```
+- La sentencia *continue* permite terminar una iteración de un ciclo for anticipadamente. También suele usarse dentro de condicionales.
