@@ -456,9 +456,10 @@ if ( <Condición 1> ){
 #### Ciclo for
 - Un *ciclo for* en Java es una estructura de código que permite ejecutar un bloque de código en repetidas ocasiones.
 - Sintaxis:
-for( \<Inicialización de variables> ; \<Condición de continuidad> ; \<Actualización de variables> ){
-    \<Sentencias>
-} 
+>for( \<Inicialización de variables> ; \<Condición de continuidad> ; \<Actualización de variables> ){
+>>\<Sentencias>
+>
+>} 
 - \<Inicialización de variables>: Se ejecuta una sola vez, al inicio del ciclo for. Suele contener la declaración e inicialización de una o más variables (suelen usarse las variables *i*, *j*, *k*).
 - \<Condición de continuidad>: Expresión booleana que se evalúa en cada iteración. Si el resultado es *true* se ejecuta el bloque de sentencias, si es *false* se termina la ejecución del ciclo for.
 - \<Actualización de variables>: Se ejecuta al final de cada iteración (después del bloque de sentencias y antes de una nueva evaluación de la condición de continuidad). Típicamente es un incremento o decremento de una o más variables.
@@ -595,3 +596,138 @@ for( \<Inicialización de variables> ; \<Condición de continuidad> ; \<Actualiz
         }
 ```
 - La sentencia *continue* permite terminar una iteración de un ciclo for anticipadamente. También suele usarse dentro de condicionales.
+
+## Semana 11
+
+### Sesión 1: Ayudantía de Teoría
+#### Tema: Uso de continue en ciclos for
+- La sentencia *continue* permite terminar una iteración de un ciclo for anticipadamente. Al igual que *break*, suele usarse dentro de condicionales.
+- **Ejemplo**: El *juego de los sietes* es un juego en el que un grupo de personas en círculo van contando los números empezando en uno, saltándose los múltiplos de 7 y los que terminan en 7. El siguiente código imprime los números de esta sucesión entre 1 y 100.
+```java
+        for(int i=1; i<=100; i++){
+            if(i%7 == 0 || i%10==7)
+                continue;
+            System.out.print(i+" ");
+        }
+```
+#### Tema: Switch-case
+- La estructura **switch-case** es una alternativa para ciertos casos de uso de la estructura **if-else if-...-else**. Su sintaxis es la siguiente:
+>switch( \< Expresión> ){  
+>>case \< Literal 1>:
+>>> \< Sentencias 1>
+>>>break;  
+>>
+>>case \< Literal 2>:
+>>>\< Sentencias 2>
+>>>break;
+>>
+>>.
+>>.
+>>.
+>>
+>>case \< Literal n>:
+>>>\< Sentencias n>
+>>>break;
+>>
+>>default:
+>>>\< Sentencias default>
+>>
+>}
+- Al inicio de la ejecución del *switch-case* se evalúa la *expresión* entre paréntesis, y el valor obtenido se compara con los indicados en las *literales* de los casos. Se ejecutará el bloque de código del caso en el que el valor coincide. Si no hay coincidencia en ninguno de los casos, se ejecutan las sentencias del bloque *default*. Las sentencias *break* y el bloque *default* pueden omitirse.
+- **Ejemplo**:
+```java
+        int paquete =2;
+        
+        switch(paquete){
+            case 1:
+                    System.out.println("Paquete 1");
+                    System.out.println("Hamburguesa");
+                    break;
+            case 2:
+                    System.out.println("Paquete 2");
+                    System.out.println("Pizza");
+                    break;
+        }
+```
+- En el anterior ejemplo la variable *paquete* guarda un entero que se asocia con un paquete en el menú de un restaurante. Si el valor es *1* se imprimirá el primer paquete, si el valor *2* el segundo. Cualquier otro valor no llevará a la impresión de texto alguno.
+- **Ejemplo**: ¿Qué ocurre si en el código anterior se omiten las sentencias *break*?
+```java
+        int paquete =2;
+        
+        switch(paquete){
+            case 1:
+                    System.out.println("Paquete 1");
+                    System.out.println("Hamburguesa");
+            case 2:
+                    System.out.println("Paquete 2");
+                    System.out.println("Pizza");
+        }
+```
+- Con estas modificaciones, si *paquete* tiene valor *1*, se ejecutaran ambos bloques de código (todos los bloques que haya hasta encontrar un *break* o hasta el término de los casos). Si el valor es *2* el comportamiento será el mismo que en el caso anterior.
+- **Ejemplo**: Se agrega ahora un bloque *default*, el cual se ejecutará si el valor de *paquete* no coincide con la literal de ninguno de los casos.
+```java
+        int paquete = 5;
+        switch(paquete){
+            case 1:
+                    System.out.println("Paquete 1");
+                    System.out.println("Hamburguesa");
+                    break;
+            case 2:
+                    System.out.println("Paquete 2");
+                    System.out.println("Pizza");
+                    break;
+            case 3:
+                    System.out.println("Paquete 3");
+                    System.out.println("Pasta");
+                    break;
+            default:
+                    System.out.println("Paquete no encontrado");
+        }
+```
+- **Ejemplo**: Un ejemplo típico de uso de *switch-case* es el de pasar números enteros a días de la semana, numerando los días del 1 al 7.
+```java
+        int dia = 3;
+        String Dia=null;
+        switch(dia){
+            case 1:
+                    Dia = "Domingo";
+                    break;
+            case 2:
+                    Dia = "Lunes";
+                    break;
+            case 3:
+                    Dia = "Martes";
+                    break;
+            case 4:
+                    Dia = "Miercoles";
+                    break;
+            case 5:
+                    Dia = "Jueves";
+                    break;
+            case 6:
+                    Dia = "Viernes";
+                    break;
+            case 7:
+                    Dia = "Sabado";
+                    break;                                                           
+            default:
+                    System.out.println("Dia no valido.");
+        }
+```
+#### Tema: Operador ternario
+- Java (entre otros lenguajes) cuenta con un **operador ternario** que permite simplificar algunos condicionales **if-else**. Su sintaxis es la siguiente:
+> \< Condición> ? \< Expresión 1> : \< Expresión 2>
+- La *condición* es una expresión *booleana*. Si la condición devuelve verdadero (*true*), el operador devolverá el valor de la *Expresión 1*, y si devuelve falso (*false*), se devolverá el valor de la *Expresión 2*.
+- **Ejemplo:** El siguiente código guarda en la variable *c* el valor mayor entre *a* y *b*.
+```java
+        int a=10, b=50, c;
+        c = a > b ? a : b;
+```
+- El código equivalente con **if-else** sería el siguiente:
+```java
+        int a=10, b=50, c;
+        if( a > b )
+            c = a;
+        else
+            c = b;
+```
