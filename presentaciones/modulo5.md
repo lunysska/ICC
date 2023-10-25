@@ -310,6 +310,8 @@ public class PruebaRegistroMedico{
 }
 ```
 
+
+#### Tema: variables y su alcance. principios de inicialización
 ## Semana 9
 
 ### Sesión 2: Ayudantía de Teoría
