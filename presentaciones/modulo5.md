@@ -1,4 +1,4 @@
-# Módulo 5. Tipos de datos, expresiones y flujo de control
+# Módulo 5. Tipos de datos, variables, expresiones y flujo de control
 ## Semana 5
 
 ### Sesión 1. Ayudantía de Teoria
