@@ -733,3 +733,91 @@ if ( <Condición 1> ){
         else
             c = b;
 ```
+
+## Semana 11
+
+### Sesión 2: Ayudantía de Teoría
+#### Tema: Operador ternario (continuación)
+- **Ejemplo:** El siguiente código guarda en la variable *c* el valor del área o del perímetro de un rectángulo con lados *a* y *b*, dependiendo del valor de la cadena AreaOPerimetro.
+```java
+        int a=10, b=50, c;
+        String areaOPerimetro = "Area";
+        c = areaOPerimetro.equals("Area") ? a*b : 2*(a+b);
+```
+- **Ejemplo:** El siguiente código imprime *Par* o *Impar* dependiendo de la paridad de *numero*.
+```java
+        int numero = 11;
+        System.out.println( numero%2==0 ? "Par" : "Impar" );
+```
+- **Ejemplo:** Es posible emplear condicionales anidados con el operador ternario, puesto que las expresiones que devuelve a su vez pueden contener operadores ternarios. El siguiente código resuelve el ejercicio del año bisiesto revisado anteriormente.
+```java
+        int year = 2000;
+        boolean bisiesto;
+        bisiesto = (year%4==0) ? ( (year%100==0) ? ((year % 400 ==0) ? true: false) : true) : false ;
+
+```
+- Sin embargo, cuando se requieren condicionales anidados es preferible usar **if-else if-...-else** para mejorar la legibilidad del código.
+
+#### Tema: Ciclo while
+- Un *ciclo while* permite ejecutar un repetidas ocasiones un bloque de código, mientras se cumpla la condición de continuidad (a veces llamada condición de término).
+- Sintaxis:
+>while( \< Condición> ){
+>> \< Sentencias>
+>
+>}
+- **Ejemplo:** El siguiente código suma los números del 1 al 10, e imprime la suma.
+```java
+        int i = 0;
+        int suma = 0;
+        
+        while(i < 10){
+            i = i + 1;
+            suma = suma + i;
+        }
+        
+        System.out.println(suma);
+```
+- Es posible implementar un *ciclo while* "infinito", que estará iterando hasta que se detenga el programa (o hasta que se alcance una sentencia *break;* en el bloque de código), de la manera siguiente:
+>while(  true ){
+>> \< Sentencias>
+>
+>}
+- Por ejemplo, la suma de los números del 1 al 10 podría implementarse como:
+```java
+        int i = 0;
+        int suma = 0;
+        
+        while(true){
+            if(i>=10)
+                break;
+            i = i + 1;
+            suma = suma + i;
+        }
+
+        System.out.println(suma);
+```
+#### Tema: Ciclo do-while
+- Un *ciclo do-while* es muy similar a un *ciclo while*. La única diferencia consiste en que la condición de continuidad se evalúa al final. De este modo, en un ciclo *do-while*, el bloque de sentencias siempre se ejecuta al menos una vez (a diferencia de un *ciclo for* o *ciclo while*, donde si la condición no se cumple al inicio, el bloque nunca se ejecuta).
+- **Ejemplo**: La suma de los números del 1 al 10 con un *ciclo do-while* puede implementarse como:
+```java
+        int i = 0;
+        int suma = 0;
+        
+        do{
+            i = i + 1;
+            suma = suma + i;
+        }while(i<10);
+
+        System.out.println(suma);
+```
+- **Ejemplo**: El siguiente código itera repetidamente mientras el usuario responda "S". Con cualquier otra entrada la ejecución termina.
+```java
+        Scanner scanner = new Scanner(System.in);
+        String respuesta;
+        do{
+            System.out.print("¿Continuar? S / N : ");
+            respuesta = scanner.nextLine();
+        }while(respuesta.equals("S"));
+``` 
+
+
