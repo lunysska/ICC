@@ -820,4 +820,27 @@ if ( <Condición 1> ){
         }while(respuesta.equals("S"));
 ``` 
 
+## Semana 12
+
+### Sesión 1: Ayudantía de Teoría
+#### Tema: Recursión
+- En Ciencias de la Computación, un *método recursivo* es aquél que en su definición se llama o hace referencia a sí mismo. La recursión puede ser empleada para resolver una gran cantidad de problemas, por lo que es común en muchos algoritmos.
+- **Ejemplo: Fibonacci recursivo.** Es posible implementar un método recursivo que calcule el n-ésimo término de la sucesión de Fibonacci, de la siguiente manera:
+```java
+    public static long fibonacci(long n){
+        if(n<=1)
+            return n;
+        else
+            return fibonacci(n-1)+fibonacci(n-2);
+    }
+```
+- **Árbol de llamadas:** Para comprender mejor el funcionamiento de un método recursivo, puede ser útil estudiar el *árbol de llamadas* que se genera al usar el método con algún valor del parámetro dado. Por ejemplo, al llamar *fibonacci(5)*, se tendría:
+
+- Como se observa, al llamar al método *fibonacci* con el parámetro *5*, se realizan en total *15* llamadas al método, por lo que no es una solución eficiente.
+- Cuando se ejecuta una llamada recursiva, se genera una entrada en la *pila (stack) de llamadas*. Si ésta se satura, se producirá un error de tipo *stack overflow*.
+- Todo método recursivo puede implementarse de forma iterativa (sin recursión). Entre las ventajas del uso de recursión, se encuentran la implementación de código breve y fácil de mantener, que puede ser relativamente eficiente empleando las técnicas adecuadas. Sin embargo, con frecuencia las soluciones implementadas de esta forma hacen mayor uso de memoria y tiempo de ejecución.
+- **Otros ejemplos típicos:** Algunos otros casos comúnes de uso de la recursión son:
+- - Algoritmos de *backtracking* (por ejemplo, el *problema de las 8 reinas*, que consiste en determinar las diferentes formas de colocar 8 reinas en un tablero de ajedrez sin que se ataquen dos o más de ellas).
+- - Algoritmos de recorrido de *árboles* (o *gráficas* en general).
+- - Algoritmos de tipo *divide y vencerás* (en los que se soluciona un problema grande a partir de las soluciones de instancias más pequeñas del problema).
 
