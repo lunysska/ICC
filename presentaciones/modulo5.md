@@ -836,6 +836,8 @@ if ( <Condición 1> ){
 ```
 - **Árbol de llamadas:** Para comprender mejor el funcionamiento de un método recursivo, puede ser útil estudiar el *árbol de llamadas* que se genera al usar el método con algún valor del parámetro dado. Por ejemplo, al llamar *fibonacci(5)*, se tendría:
 
+![Árbol de llamadas](/modulo5/arbol.png)
+
 - Como se observa, al llamar al método *fibonacci* con el parámetro *5*, se realizan en total *15* llamadas al método, por lo que no es una solución eficiente.
 - Cuando se ejecuta una llamada recursiva, se genera una entrada en la *pila (stack) de llamadas*. Si ésta se satura, se producirá un error de tipo *stack overflow*.
 - Todo método recursivo puede implementarse de forma iterativa (sin recursión). Entre las ventajas del uso de recursión, se encuentran la implementación de código breve y fácil de mantener, que puede ser relativamente eficiente empleando las técnicas adecuadas. Sin embargo, con frecuencia las soluciones implementadas de esta forma hacen mayor uso de memoria y tiempo de ejecución.
