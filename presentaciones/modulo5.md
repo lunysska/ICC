@@ -836,7 +836,7 @@ if ( <Condición 1> ){
 ```
 - **Árbol de llamadas:** Para comprender mejor el funcionamiento de un método recursivo, puede ser útil estudiar el *árbol de llamadas* que se genera al usar el método con algún valor del parámetro dado. Por ejemplo, al llamar *fibonacci(5)*, se tendría:
 
-![Árbol de llamadas](/presentaciones/modulo5/arbol.png)
+![Árbol de llamadas](./modulo5/arbol.png)
 
 - Como se observa, al llamar al método *fibonacci* con el parámetro *5*, se realizan en total *15* llamadas al método, por lo que no es una solución eficiente.
 - Cuando se ejecuta una llamada recursiva, se genera una entrada en la *pila (stack) de llamadas*. Si ésta se satura, se producirá un error de tipo *stack overflow*.
