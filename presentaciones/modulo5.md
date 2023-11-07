@@ -526,6 +526,7 @@ if ( <Condición 1> ){
 
 ### Sesión 2: Ayudantía de Teoría
 #### Tema: Ciclo for (continuación)
+- Se aplicó el [miniExamen2.pdf](../miniExamenes/miniExamen2.pdf)
 - **Ejemplo 7**: **Sucesión de Fibonacci con un arreglo**
 - Una forma alternativa de implementar la generación de los números de Fibonacci es con un arreglo lineal.
 ```java
