@@ -849,3 +849,78 @@ if ( <Condición 1> ){
 - - Algoritmos de recorrido de *árboles* (o *gráficas* en general).
 - - Algoritmos de tipo *divide y vencerás* (en los que se soluciona un problema grande a partir de las soluciones de instancias más pequeñas del problema).
 
+## Semana 13
+
+### Sesión 1: Ayudantía de Teoría
+#### Tema: Ciclos, condicionales, arreglos
+- Se aplicó el [miniExamen5.pdf](../miniExamenes/miniExamen5.pdf)
+- **Ejercicio: Clase Polinomio**
+- Un polinomio de grado *g* en la variable *x* es una expresión algebraica de la forma:
+$P(x) = c_0 + c_1 x + c_2 x^2 + ... + c_g x^g$
+donde los $c_i$ ($i \in{0,1,2,...,g}$) son llamados *coeficientes*.
+- La derivada del polinomio anterior está dada por:
+$P'(x) = c_1 + 2c_2 x + 3c_3 x^2 + ... + gc_g x^{g-1}$
+- Se expone a continuación el código base para una clase Polinomio (en la Tarea se completará el código de esta clase).
+```java
+public class Polinomio{
+
+    private double[] coeficientes;
+    private int grado, gradoMax;
+
+    public Polinomio(int gM){
+        coeficientes = new double[gM+1];
+        grado = -1;
+        gradoMax = gM;
+    }
+    
+    public Polinomio(int g, int gM){
+        coeficientes = new double[gM+1];
+        grado = g;
+        gradoMax = gM;
+    }
+    
+    public void setCoeficiente(int ind, double c){
+        if(ind>=0 && ind<=grado)
+            coeficientes[ind]=c;
+        else
+            System.out.println("Indice fuera de rango.");
+    }
+
+    public void agregaCoeficiente(double c){
+        if(grado<gradoMax){
+            grado++;
+            coeficientes[grado]=c;
+        }else{
+            System.out.println("Grado maximo alcanzado.");
+        }
+    }
+    
+    public void imprime(){
+        if(grado==-1){
+            System.out.println("Polinomio no inicializado.");
+        }else{    
+            System.out.printf("%.2f",coeficientes[0]);
+            if(grado>=1){
+                System.out.printf("%+.2fx",coeficientes[1]);
+                if(grado>=2){
+                    for(int i=2; i<=grado; i++)
+                        System.out.printf("%+.2fx^%d",coeficientes[i],i);
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args){
+        int g = 3;
+        double[] constantes = new double[]{-3,-7,-2,5};
+        Polinomio pol1 = new Polinomio(10);
+        pol1.imprime();
+        for(int i=0; i<=g; i++){
+            pol1.agregaCoeficiente(constantes[i]);
+            pol1.imprime();        
+        }                            
+    }
+
+}
+```
