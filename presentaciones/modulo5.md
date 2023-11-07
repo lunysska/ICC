@@ -826,6 +826,7 @@ if ( <Condición 1> ){
 
 ### Sesión 1: Ayudantía de Teoría
 #### Tema: Recursión
+- Se aplicó el [miniExamen4.pdf](../miniExamenes/miniExamen4.pdf)
 - En Ciencias de la Computación, un *método recursivo* es aquél que en su definición se llama o hace referencia a sí mismo. La recursión puede ser empleada para resolver una gran cantidad de problemas, por lo que es común en muchos algoritmos.
 - **Ejemplo: Fibonacci recursivo.** Es posible implementar un método recursivo que calcule el n-ésimo término de la sucesión de Fibonacci, de la siguiente manera:
 ```java
