@@ -604,6 +604,7 @@ if ( <Condición 1> ){
 
 ### Sesión 1: Ayudantía de Teoría
 #### Tema: Uso de continue en ciclos for
+- Se aplicó el [miniExamen3.pdf](../miniExamenes/miniExamen3.pdf)
 - La sentencia *continue* permite terminar una iteración de un ciclo for anticipadamente. Al igual que *break*, suele usarse dentro de condicionales.
 - **Ejemplo**: El *juego de los sietes* es un juego en el que un grupo de personas en círculo van contando los números empezando en uno, saltándose los múltiplos de 7 y los que terminan en 7. El siguiente código imprime los números de esta sucesión entre 1 y 100.
 ```java
