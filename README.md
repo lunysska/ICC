@@ -9,7 +9,7 @@ Temario
 5. [Tipos de datos, variables, expresiones y flujo de control](presentaciones/modulo5.md)
 6. [Arreglos](presentaciones/modulo6.md)
 7. [Cadenas](presentaciones/modulo7.md)
-   7.1. El Inventario(presentaciones/modulo7-Inventario.md)
+   7.1. [El Inventario](presentaciones/modulo7-Inventario.md)
 9. [Herencia y diseño de clases](presentaciones/modulo8.md)
 10. Manejo de errores
 11. Colecciones de datos
