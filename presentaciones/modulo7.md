@@ -48,3 +48,64 @@
     System.out.println(saludo.charAt(3));
 ```
 -Nota: Los índices inician en 0, por lo que el código anterior imprime el caracter 'a'.
+
+## Así queda el bosquejo de código que incluye las operaciones de manipulación para la colección estática.
+
+```java
+//import adecuado
+public class PruebaProveedor{
+
+public static void main( ..... ){
+
+//1. Construir un objeto Proveedor
+//Usuario: un nombre
+String nombre = "costco";//lectura del teclado
+Proveedor p = new Proveedor(nombre, 5);
+
+//2. Agregar un producto para el
+//proveedor "p"
+Producto p1 = new Producto("pastel",
+345.0,
+'C',
+new Fecha(31,8,2023));
+p.agregaProducto(p1);
+
+Producto p2 = new Producto("jabon",
+45.0,
+'A',
+new Fecha(31,8,2023));
+Producto p3 = new Producto("cuaderno",
+60.0,
+'E',
+new Fecha(31,8,2023));
+
+//3.Agregar dos productos más para el
+//proveedor "p"
+p.agregaProducto(p2);
+p.agregaProducto(p3);
+
+//4.
+p.agregaProducto("computadora",
+32,000.0,
+'T',
+31,8,2023);
+
+//4'. Probando que el producto 4 se generó adecuadamente
+//
+System.out.println( p);
+// <--- nombre y 4 productos
+
+//variables al vuelo
+System.out.println( p.recuperaProducto("computadora"));
+
+//5. Modificando el precio del producto 4.
+p.modificaPrecio("computadora", 16,000.0);
+
+//6. Corroborando que el precio del producto sí se realizó
+System.out.println( p);
+System.out.println(p.recuperaProducto("computadora"));
+
+}
+
+}
+```
