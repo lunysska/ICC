@@ -8,7 +8,7 @@ Temario
 4. [Clases y objetos en Java](presentaciones/modulo4.md)
 5. [Tipos de datos, variables, expresiones y flujo de control](presentaciones/modulo5.md)
 6. [Arreglos](presentaciones/modulo6.md)
-7. [Cadenas](presentaciones/modulo7.md)[El Inventario](presentaciones/modulo7-Inventario.md)
+7. [Cadenas](presentaciones/modulo7.md)
 8. [Herencia y diseño de clases](presentaciones/modulo8.md)
 9. Manejo de errores
 10. Colecciones de datos
