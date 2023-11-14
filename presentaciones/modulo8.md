@@ -106,3 +106,152 @@ public class Futbolista extends IntegranteEquipo{
 }
 ```
 - Y de modo similar para las clases Entrenador y Terapeuta.
+
+## Semana 14
+
+### Sesión 1: Ayudantía de Teoría
+#### Tema: Modificadores de acceso en Java
+- Se aplicó el [miniExamen6.pdf](../miniExamenes/miniExamen6.pdf)
+- En Java se cuenta con cuatro modificadores de acceso. Los niveles de visibilidad que proporcionan se resumen en la siguiente tabla.
+
+| Visibilidad | public | protected | default / package | private |
+|-------------|--------|-----------|-------------------|---------|
+|Desde la misma clase|Sí|Sí|Sí|Sí|
+|Desde el mismo paquete|Sí|Sí|Sí|No|
+|Desde una subclase del mismo paquete|Sí|Sí|Sí|No|
+|Desde una subclase en otro paquete|Sí|Sí|No|No|
+|Desde cualquier clase|Sí|No|No|No|
+- **Ejemplo:** El siguiente ejemplo tiene la finalidad de ilustrar el funcionamiento de los modificadores de acceso, mostrando diferentes casos que se pueden presentar. El código tiene solo fines ilustrativos, no es una aplicación realista ni se apega a las buenas prácticas (precisamente para poder ejemplificar comportamientos indeseados).
+- Considérese la siguiente estructura de archivos:
+> src/
+> > paquete1/
+> > > Vehiculo.java
+> > > Auto.java
+> >
+> > paquete2/
+> > > PruebasVehiculo.java
+- La clase Auto heredará de la clase Vehiculo, mientras que la clase PruebasVehiculo importará a la clase Vehiculo (pero no heredará). Se muestran a continuación los códigos.
+- **Vehiculo.java**
+```java
+
+package paquete1;
+ 
+public class Vehiculo{
+
+    protected int id;
+    public int precio;
+    private int velocidad;
+
+    public Vehiculo(int id, int precio, int velocidad){
+        this.id = id;
+        this.precio = precio;
+        this.velocidad = velocidad;
+    }
+
+    public int getId(){
+        return id;
+    }
+    
+    private int getPrecio(){
+        return precio;
+    }
+
+    protected int getVelocidad(){
+        return velocidad;
+    }
+        
+    public void setVelocidad(int velocidad){
+        this.velocidad = velocidad;
+    }
+    
+    public void imprime(){
+        System.out.println("id: "+id);
+        System.out.println("precio: "+precio);
+        System.out.println("velocidad: "+velocidad);
+    }
+    
+}
+```
+
+- **Auto.java**
+```java
+package paquete1;
+
+class Auto extends Vehiculo{
+
+    private String placa;
+    
+    public Auto(int id, int precio, int velocidad, String placa){
+        super(precio,velocidad,id);
+        this.placa = placa;
+    }
+    
+    public void imprime(){
+        super.imprime();
+        System.out.println("placa: "+placa);
+    }
+    
+    public static void main(String[] args){
+        
+        Auto a1 = new Auto(37,50000,200,"A00AAA");
+        a1.imprime();
+        
+        a1.precio = 100; // Funciona sin problemas
+       
+        // a1.velocidad = 200;
+        // Error en compilacion: velocidad has private access
+        
+        a1.id = 1; // Funciona sin problemas
+
+        a1.imprime();
+        
+        a1.setVelocidad(250); // Funciona sin problemas
+        a1.imprime();
+        
+        System.out.println(a1.getId()); // Funciona sin problemas
+        
+        // System.out.println(a1.getPrecio());
+        // Error en compilacion: cannot find symbol
+         
+        System.out.println(a1.getVelocidad()); // Funciona sin problemas
+    }
+}
+```
+
+- **PruebasVehiculo.java**
+```java
+package paquete2;
+import paquete1.Vehiculo;
+ 
+class PruebasVehiculo{
+
+    public static void main(String[] args){
+        
+        Vehiculo v1 = new Vehiculo(40,400000,180);
+        v1.imprime();
+        
+        v1.precio = 100; // Funciona sin problemas
+        
+        // v1.velocidad = 200;
+        // Error en compilacion: velocidad has private access
+        
+        // v1.id = 1;
+        // Error en comp: id has protected access in Vehiculo
+        
+        v1.imprime();
+        
+        v1.setVelocidad(250); // Funciona sin problemas
+        v1.imprime();
+
+        System.out.println(v1.getId()); // Funciona sin problemas
+        
+        // System.out.println(v1.getPrecio());
+        // Error en compilacion: getPrecio() has private access in Vehiculo
+        
+        // System.out.println(v1.getVelocidad());
+        // Error en compilacion: getVelocidad() has protected access in Vehiculo
+    }
+
+}
+```
+
