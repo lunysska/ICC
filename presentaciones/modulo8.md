@@ -254,4 +254,20 @@ class PruebasVehiculo{
 
 }
 ```
+## Sesion k. Teoria
+### Resumen de Herencia
 
+### Clase madre que pierde el constructor por omisión
+
+#### Sobrecarga del constructor de la madre, usando this()
+
+### Clase hija que pierde el constructor por omisión
+#### usando super() como primer línea del constructor
+
+### Revisión de cómo se ejecuta en la memoria cuando se crea un objeto de la clase Hija con constructor
+#### Object como "tope" en el proceso de ejecución de inicialización.
+
+### Clases Wrapper en Java
+
+### Clases abstractas e Interfaces
+#
