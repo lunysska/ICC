@@ -1,4 +1,4 @@
-# Herencia y diseño de clases
+# 8. Herencia y diseño de clases
 
 ## Qué es herencia en el PPOO
 ## Qué ventajas tiene la herencia.
