@@ -272,3 +272,60 @@ class PruebasVehiculo{
 ### Clases abstractas e Interfaces
 #
 
+## Semana 14
+
+### Sesión 2: Ayudantía de Teoría
+#### Tema: Uso de super
+- En Java, la palabra reservada *super* puede emplearse para invocar métodos de la clase padre, incluyendo constructores (los métododos constructores no se heredan a las clases hijas).
+- **Ejemplo:** El siguiente ejemplo retoma la idea del ejemplo visto en la Sesión 2 de la semana 13, de un sistema para representar a los integrantes de un equipo de fútbol. Por brevedad se incluyen solo dos clases y se simplifica su contenido.
+```java
+public class IntegranteEquipo{
+
+    protected int id;
+    protected String nombre;
+    
+    public IntegranteEquipo(int id, String nombre){
+        this.id = id;
+        this.nombre = nombre;
+    }
+    
+    public String toString(){
+        return "id: "+String.valueOf(id)+"\n"+"nombre: "+nombre;
+    }
+    
+    public static void main(String[] args){
+        
+        IntegranteEquipo ie1 = new IntegranteEquipo(1,"Mario");
+        System.out.println(ie1);
+        
+    }
+
+}
+```
+```java
+public class Futbolista extends IntegranteEquipo{
+
+    private int dorsal;
+    private String posicion;
+        
+    public Futbolista(int id, String nombre, int dorsal, String posicion){
+        super(id, nombre);
+        this.dorsal = dorsal;
+        this.posicion = posicion;
+    }
+    
+    public String toString(){
+        String cadena = super.toString()+"\n";
+        return cadena+"dorsal: "+String.valueOf(dorsal)+"\n"+"posicion: "+posicion;
+    }
+    
+    public static void main(String[] args){
+        
+        Futbolista f1 = new Futbolista(3,"Mario",1,"portero");
+        System.out.println(f1);
+        
+    }
+
+}
+```
+
