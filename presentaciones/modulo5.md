@@ -924,3 +924,57 @@ public class Polinomio{
 
 }
 ```
+## Semana 14
+
+### Sesión 2: Ayudantía de Teoría
+#### Tema: Paso de argumentos por valor y por referencia
+- En Java los argumentos de tipos primitivos (como char, int, double, etc.) son siempre *pasados por valor*. Esto significa que cualquier cambio a los valores de los argumentos solo existe en el alcance (*scope*) del método (después de finalizar la ejecución del método los cambios se pierden).
+- Por otra parte, los argumentos que son objetos son siempre *pasados por referencia* (aunque la referencia como tal es *pasada por valor*). Esto incluye arreglos, cadenas y objetos de clases definidas por el usuario, entre otros.
+- Cuando un argumento se *pasa por valor* se crea una copia de la variable (que es con la que trabaja el método). En cambio, cuando se *pasa por referencia*, lo que se comparte es solo la referencia, no se crea una copia del objeto, de modo que el método trabaja con el mismo objeto (y por ello después los cambios permanecen, porque es el mismo objeto). Sin embargo, aunque dentro del método puede cambiarse el objeto al que apunta la referencia, al finalizar el método este cambio se pierde (ya que la referencia se *pasa por valor*).
+- **Ejemplo:** En el siguiente código se implementa un *metodo1* que recibe un parámetro por valor (ya que recibe un *int*, que es un tipo primitivo), y un *metodo2* que recibe un parámetro por referencia (ya que es un *array*, el cual es un objeto). Se imprimen mensajes para mostrar las diferencias en el comportamiento.
+```java
+public class Pruebas{
+
+    // Metodo que recibe un argumento por valor
+    public static void metodo1(int v){
+        System.out.println("Valor de v recibido por el metodo1: "+v);
+        v=10; // Se modifica el valor de v
+        System.out.println("Nuevo valor de v en el metodo1: "+v);
+    }
+
+    // Metodo que recibe un argumento por referencia    
+    public static void metodo2(int[] a){
+        int l = a.length;
+        System.out.println("Valores en el arreglo recibidos en metodo2: ");
+        for(int i = 0; i<l; i++)
+            System.out.print(a[i]+" ");
+        System.out.println();
+        // Se modifican los valores en el arreglo
+        for(int i = 0; i<l; i++)
+            a[i]=a[i]*2;
+        System.out.println("Nuevos valores en el arreglo en el metodo2: ");
+        for(int i = 0; i<l; i++)
+            System.out.print(a[i]+" ");
+        System.out.println();
+    }
+
+    public static void main(String[] args){
+        
+        int v = 5;
+        metodo1(v);
+        System.out.println("Valor de v despues de la ejecucion del metodo1: "+v);
+        
+        int[] a = new int[]{1,2,3,4,5};
+        
+        metodo2(a);
+        int l = a.length;
+        
+        System.out.println("Valores en el arreglo despues de le ejecución del metodo2: ");
+        for(int i=0;i<l;i++)
+            System.out.print(a[i]+" ");
+        System.out.println();
+        
+    }
+
+}
+```
