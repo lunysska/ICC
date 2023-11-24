@@ -1,4 +1,10 @@
 ## Semana 15
+### Colecciones en Java
+## Que son, cuales son sus operaciones principales
+## Cómo es´ta la jerarquia en Java en el paquete util y las caracteristicas de las principales interfaces
+## Ejemplos diversos en dos ramificaciones diferentes de la jerarquia del API de Java
+## Ejemplos de implementacion de Comparable para poder definir una estructura ordenada.
+
 
 ### Sesión 2: Ayudantía de Teoría
 #### Tema: Tipos genéricos
