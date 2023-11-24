@@ -10,7 +10,7 @@ Temario
 6. [Arreglos](presentaciones/modulo6.md)
 7. [Cadenas](presentaciones/modulo7.md)
 8. [Herencia y diseño de clases](presentaciones/modulo8.md)
-9. Manejo de errores
+9. [Manejo de errores](presentaciones/modulo9.md)
 10. [Colecciones de datos](presentaciones/modulo10.md)
 11. Entrada y salida de datos
 12. Hilos de ejecución (opcional)
