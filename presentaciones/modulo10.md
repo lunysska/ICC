@@ -117,3 +117,4 @@ public class Par<T>{
 	lista.add("Cadena 1");
 	String texto = lista.get(0); // No se necesita usar un casting
 ```
+- **Referencia:** Canek Peláez, *Estructuras de Datos con Java Moderno*.
