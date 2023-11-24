@@ -13,5 +13,5 @@ Temario
 9. [Manejo de errores](presentaciones/modulo9.md)
 10. [Colecciones de datos](presentaciones/modulo10.md)
 11. Entrada y salida de datos
-12. Hilos de ejecución (opcional)
+12. [Hilos de ejecución (opcional)](presentaciones/modulo12.md)
 13. Límites de la tecnología computacional
