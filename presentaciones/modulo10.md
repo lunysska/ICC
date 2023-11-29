@@ -5,7 +5,7 @@
 ## Ejemplos diversos en dos ramificaciones diferentes de la jerarquia del API de Java
 ## Ejemplos de implementacion de Comparable para poder definir una estructura ordenada.
 
-
+## Semana 15
 ### Sesión 2: Ayudantía de Teoría
 #### Tema: Tipos genéricos
 - Se aplicó el [miniExamen7.pdf](../miniExamenes/miniExamen7.pdf)
