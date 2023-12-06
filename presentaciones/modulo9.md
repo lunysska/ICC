@@ -228,3 +228,106 @@ public class EjemploTryCatch{
 ```
 Ultima linea del bloque try.Bloque del finally
 ```
+
+## Semana 16
+### Sesión 2: Ayudantía de Teoría
+#### Tema: Manejo de errores en Java
+- **Ejemplo: try-catch en un ciclo**
+- En este ejemplo se implementa un programa que solicita al usuario dos enteros para calcular su división entera. Se usa un bloque *try-catch* para atrapar el posible error de división entre cero, dentro de un ciclo para volver a solicitar los enteros en caso de que se requiera. Si el usuario ingresa el cero como divisor cinco veces seguidas el programa termina mostrando un mensaje de intentos máximos.
+```java
+import java.util.Scanner;
+
+public class EjemploTryCatch2{
+    
+    public static void main(String[] args){
+
+        int contador = 0;        
+        int a;
+        int b;
+        int c;
+        boolean bandera = false;
+        
+        Scanner in = new Scanner (System.in);
+        
+        do{
+            contador++;
+        
+            System.out.print("Ingresa numerador y denominador: ");
+            a = in.nextInt();
+            b = in.nextInt();
+        
+            try{
+                c = a/b;
+                bandera = true;
+                System.out.println("El cociente entero es: "+c);
+            }catch(ArithmeticException ae){
+                System.out.println("Error aritmetico. Favor de reintentar.");
+            }
+        
+        }while(contador<5 && bandera == false);
+        
+        if(contador == 5 && bandera == false)
+            System.out.println("Numero de intentos maximo alcanzado.");
+
+    }
+
+}
+```
+- En el ejemplo anterior solo se está atrapando la excepción ArithmeticException. Todavía podrían producirse otras excepciones no atrapadas, como una InputMismatchException en la lectura.
+- **Ejemplo: Creación de una excepción propia**
+- **Motivación:** Observe el siguiente código:
+```java
+public class EjemploTryCatch3{
+    
+    public static void main(String[] args){
+
+        double a = 5.0;
+        double b = 0.0;
+        double c;
+        
+        try{
+            c = a/b;
+            System.out.println("El valor de c es: "+c);
+        }catch(Exception e){
+            System.out.println(e);
+        }   
+    }
+}
+```
+- Aunque pueda parecer contraintuitivo, la compilación y ejecución del código anterior no produce excepción alguna. Se imprimiría en consola el valor "Infinity", que Java considera en *double* (al igual que -Infinity). El ejemplo siguiente implementa una clase para tener una nueva excepción, que se usa después en un método para dividir *doubles* que no permita dividir entre cero.
+```java
+class DivisionPorCeroDoubleException extends Exception{
+    public DivisionPorCeroDoubleException(String mensaje){
+        super(mensaje);
+    }
+}
+
+public class EjemploTryCatch4{
+
+    public static double divide(double a, double b) throws DivisionPorCeroDoubleException{
+        if(b==0.0) // Esto no es buena practica, es conveniente usar intervalos
+            throw new DivisionPorCeroDoubleException("El divisor no puede ser cero.");
+        return a/b;
+    }
+    
+    public static void main(String[] args){
+
+        double a = -5.0;
+        double b = 0.0;
+        double c;
+        
+        try{
+            c = divide(a,b);
+            System.out.println("El valor de c es: "+c);
+        }catch(DivisionPorCeroDoubleException dpcde){
+            System.out.println(dpcde);
+            c = a/b;
+        }
+        
+        System.out.println("El valor de c es: "+c);
+        
+    }
+
+}
+```
+- En este caso, como para poder imprimir el valor de *c* después del bloque *try-catch* *c* debe tener algún valor, se opta por realizar la divisón habitual después de haber atrapado la excepción.
