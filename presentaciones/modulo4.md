@@ -11,14 +11,15 @@
 - tipos de datos, qué son, para qué sirven.
 - lenguajes de programación tipificados, no-tipificados (qué pasa con el manejo de la memoria).
 - tipos de datos en Java: tipos de datos primitivos y clases
-- ejemplos de construcción de clase con atributos primitivos:
+- ejemplos de construcción de clase mínima con atributos primitivos:
 ```java
 class Estudiante {
     int edad;
 }
 ```
 ### Usando el operador punto para probar una clase. 
-Se hace una clase Main, que tiene el metodo main, se crea un objeto, se usa **new**, se le asigna un valor al atributo usando el operador **.** y se manda a la salida estándar.
+Se hace una clase Main, que tiene el metodo main (como inicio de ejecucion), se crea una variable basica en el main y se manda a salida estandar (se explica de manera general el System.out.println, mas el operador de concatenacion + y se verifica la diferencia con + en 3+4). <br>
+Se crea un objeto, se explica de manera general lo que hace un constructor,se usa **new**, se le asigna un valor al atributo usando el operador **.** y se manda a la salida estándar.
 Cuando ya se vió que funciona, entonces se modifica el diagrama de la clase Estudiante agregando varios atributos (5), y se vuelve a hacer todo el proceso.
 
 
