@@ -1,12 +1,12 @@
 # Módulo 4. Clases y objetos en Java
 
 ## Teoria
-### Tema: Clases en Java
+### Clases en Java
 - Uso de la palabra reservada **class**
 - Convenciones para el nombrado de clases
 - bloque de clases
 
-### Tema: Atributos de la clase
+### Atributos de la clase
 - el *;* es el fin de la expresión
 - tipos de datos, qué son, para qué sirven.
 - lenguajes de programación tipificados, no-tipificados (qué pasa con el manejo de la memoria).
@@ -17,7 +17,7 @@ class Estudiante {
     int edad;
 }
 ```
-### Tema: Usando el operador punto para crear una clase. 
+### Usando el operador punto para probar una clase. 
 Se hace una clase Main, que tiene el metodo main, se crea un objeto, se usa **new**, se le asigna un valor al atributo usando el operador **.** y se manda a la salida estándar.
 Cuando ya se vió que funciona, entonces se modifica el diagrama de la clase Estudiante agregando varios atributos (5), y se vuelve a hacer todo el proceso.
 
