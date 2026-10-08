@@ -1,25 +1,26 @@
 # Módulo 4. Clases y objetos en Java
-## Semana 4
 
-### Sesión 1. Teoria
-#### Tema: Clases en Java
+## Teoria
+### Tema: Clases en Java
 - Uso de la palabra reservada **class**
 - Convenciones para el nombrado de clases
 - bloque de clases
 
-#### Tema: Atributos de la clase
+### Tema: Atributos de la clase
 - el *;* es el fin de la expresión
 - tipos de datos, qué son, para qué sirven.
 - lenguajes de programación tipificados, no-tipificados (qué pasa con el manejo de la memoria).
 - tipos de datos en Java: tipos de datos primitivos y clases
 - ejemplos de construcción de clase con atributos primitivos:
 ```java
-class Perro {
+class Estudiante {
     int edad;
-    char sexo;
-    float peso;
 }
 ```
+### Tema: Usando el operador punto para crear una clase. 
+Se hace una clase Main, que tiene el metodo main, se crea un objeto, se usa **new**, se le asigna un valor al atributo usando el operador **.** y se manda a la salida estándar.
+Cuando ya se vió que funciona, entonces se modifica el diagrama de la clase Estudiante agregando varios atributos (5), y se vuelve a hacer todo el proceso.
+
 
 #### Tema: Metodologías de programación
 - Seguimiento a metodologías ágiles de programación
