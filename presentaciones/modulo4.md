@@ -22,6 +22,17 @@ Se hace una clase Main, que tiene el metodo main (como inicio de ejecucion), se 
 Se crea un objeto, se explica de manera general lo que hace un constructor,se usa **new**, se le asigna un valor al atributo usando el operador **.** y se manda a la salida estándar.
 Cuando ya se vió que funciona, entonces se modifica el diagrama de la clase Estudiante agregando varios atributos (5), y se vuelve a hacer todo el proceso.
 
+### Introducción a métodos
+Del ejercicio dejado, vimos que repetir código en el main no es la mejor opción, sino que hay que introducir métodos en la clase.
+- Se cambia el diseño de clase
+- Se presenta un método básico 
+ **imprimirInfo()** explicamos detalles de la firma, con palabra reservada **void**
+  -se implementa y se debe probar en el **main** con un sólo objeto, al ver que funciona, se modifica para todos los objetos
+
+#### Comentarios
+**//** de línea
+**//* *// ** de bloque.
+Vimos el header simple de comentarios en los codigos. Ya será una petición para todos los códigos.
 
 #### Tema: Metodologías de programación
 - Seguimiento a metodologías ágiles de programación
