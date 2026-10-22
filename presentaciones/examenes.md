@@ -40,7 +40,8 @@ La explicación deberá ser clara y estar redactada con tus propias palabras. Pu
 - Fuentes de información: consulta fuentes confiables, como libros, artículos académicos, publicaciones especializadas y sitios web institucionales. Incluye las referencias de los materiales consultados.
 - Citas y referencias: identifica las fuentes de las que obtengas información y utiliza un formato de citación consistente.
 - Redacción: cuida la ortografía, la claridad, la coherencia y la organización de las ideas. Evita copiar y pegar información sin analizarla o explicarla con tus propias palabras.
-- Debe quedar en tu repositorio en **teoria/tareaExamen1** usa archivos .md
-Entrega: presenta ambas partes en un solo documento, claramente diferenciadas mediante títulos y subtítulos.
+- Entrega: presenta ambas partes en un solo documento, claramente diferenciadas mediante títulos y subtítulos.
+- Debe quedar en tu repositorio en **teoria/tareaExamen1** usa archivos .md.
+- Fecha de entrega: 29 de Octubre, hasta las 11:59 am
 
 Criterio fundamental: se valorará la capacidad para comprender y explicar la evolución de las ciencias de la computación, relacionarla con un área de interés personal y demostrar la comprensión de los conceptos básicos del paradigma orientado a objetos.
