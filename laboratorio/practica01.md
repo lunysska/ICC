@@ -3,7 +3,7 @@
 **Tema:** Introducción a la línea de comandos y los scripts para eficientar procesos.<br>
 **Lenguaje:** Bash<br>
 **Entrega:** Individual a través del almacén privado asignado por el laboratorista.<br>
-**Fecha de entrega:** Jueves 27 de octubre de 2026 a las 11:00 PM.<br>
+**Fecha de entrega:** Martes 27 de octubre de 2026 a las 11:00 PM.<br>
 **Elaboró:** [Leonardo Gallo](https://github.com/lngallo)
 
 ## Descripción 
