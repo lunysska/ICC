@@ -42,6 +42,6 @@ La explicación deberá ser clara y estar redactada con tus propias palabras. Pu
 - Redacción: cuida la ortografía, la claridad, la coherencia y la organización de las ideas. Evita copiar y pegar información sin analizarla o explicarla con tus propias palabras.
 - Entrega: presenta ambas partes en un solo documento, claramente diferenciadas mediante títulos y subtítulos.
 - Debe quedar en tu repositorio en **teoria/tareaExamen1** usa archivos .md.
-- Fecha de entrega: 29 de Octubre, hasta las 11:59 am
+- Fecha de entrega: 30 de Octubre, hasta las 11:59 am
 
 Criterio fundamental: se valorará la capacidad para comprender y explicar la evolución de las ciencias de la computación, relacionarla con un área de interés personal y demostrar la comprensión de los conceptos básicos del paradigma orientado a objetos.
