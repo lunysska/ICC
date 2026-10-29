@@ -36,7 +36,7 @@ La explicación deberá ser clara y estar redactada con tus propias palabras. Pu
 #### Indicaciones generales
 
 - Extensión: máximo tres cuartillas para la primera parte y una cuartilla adicional para la segunda parte, para un total máximo de cuatro cuartillas de contenido.
-- Formato: utiliza una presentación formal, con letra Arial o Times New Roman de 12 puntos, interlineado de 1.5 y márgenes de 2.5 cm.
+- Formato: utiliza una presentación formal.
 - Fuentes de información: consulta fuentes confiables, como libros, artículos académicos, publicaciones especializadas y sitios web institucionales. Incluye las referencias de los materiales consultados.
 - Citas y referencias: identifica las fuentes de las que obtengas información y utiliza un formato de citación consistente.
 - Redacción: cuida la ortografía, la claridad, la coherencia y la organización de las ideas. Evita copiar y pegar información sin analizarla o explicarla con tus propias palabras.
