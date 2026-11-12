@@ -38,42 +38,7 @@ Vimos el header simple de comentarios en los codigos. Ya será una petición par
 - Seguimiento a metodologías ágiles de programación
 - Esta tipo de metodología es la que se usará en el curso
 
-### Sesion 2. Ayudantía Teoría
-Más ejemplos de definición de clases, en diseño, con atributos primitivos, podría ser la continuación de la clase Polinomio, y así
-
-#### Ejemplos vistos en la Ayudantía de Teoría
-
-Ejemplo 1: Clase Vector2D
-Atributos:  
-    -- x: double  
-    -- y: double  
-Métodos:  
-    \+ norma(): double  
-    \+ anguloRadianes(): double  
-    \+ anguloGrados(): double  
-    \+ ortogonal(v: Vector2D): bool  
-    \+ suma(v: Vector2D): Vector2D  
-    \+ productoPunto(v: Vector2D): double  
-    \+ resta(v: Vector2D): Vector2D  
-    \+ productorPorEscalar(a: double): Vector2D  
-  
-Ejemplo 2: Clase Ventana  
-Atributos:  
-    -- x: int    
-    -- y: int  
-    -- l: int  
-    -- h: int  
-(Alternativamente podrían ser x1, y1, x2, y2)  
-Métodos:  
-    \+ agrandar(p: int, q: int)  
-    \+ pantallaCompleta()  
-    \+ minimizar()  
-    \+priorizar()  
-    \+mover()  
-    \+cerrar()  
-     
-
-### Sesion 2. Teoría
+### Sesion . Teoría
 
 #### Tema: String no es un tipo básico. Es una clase
 #### Tema: Presentación del sistema de semestre
@@ -161,8 +126,8 @@ public
 ```java
 public void  setAtributo(tipoDeAtributo valor{ atributo = valor }
 ```
-- el nombrado de los metodos es una convencion, no error sintactico.
-- se conocen como setters o metodos de modificacion
+- el nombrado de los metodos es una convencion, no regla sintactico.
+- se conocen como setters o metodos de modificación
 - de esta manera se logra ese codigo
 ```java
 class Producto {
@@ -311,8 +276,69 @@ public class PruebaRegistroMedico{
         rm.imprimeEstatura();
 ```
 
-### Sesión 1. Teoría
-#### Tema: Hoy vi metodos constructores
+# Sesión. Teoría
+# Tema: Métodos constructores. Métodos constructores en Java
+
+Un **constructor** es un método especial de una clase que se ejecuta
+automáticamente cuando se crea un objeto. Su principal función es
+**inicializar los atributos del objeto**, asignándoles valores
+iniciales.
+
+## Características
+
+-   Tiene el mismo nombre que la clase.
+-   No tiene tipo de retorno, ni siquiera `void`.
+-   Se ejecuta automáticamente al utilizar la palabra reservada `new`.
+-   Puede recibir parámetros para inicializar los atributos con valores
+    específicos.
+-   Una clase puede tener varios constructores (sobrecarga).
+
+## Ejemplo: clase `Cuenta` bancaria
+
+``` java
+public class Cuenta {
+
+    String titular;
+    double saldo;
+
+    // Constructor
+    public Cuenta(String titular, double saldo) {
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+}
+```
+
+### Creación de objetos
+
+``` java
+public class Principal {
+    public static void main(String[] args) {
+
+        Cuenta cuenta1 = new Cuenta("Ana", 1500.0);
+        Cuenta cuenta2 = new Cuenta("Luis", 3000.0);
+
+    }
+}
+```
+
+En este ejemplo:
+
+-   `new Cuenta(...)` invoca al constructor.
+-   `"Ana"` y `1500.0` son los argumentos que se envían al constructor.
+-   `this.titular` hace referencia al atributo del objeto.
+-   `titular` hace referencia al parámetro recibido.
+
+## ¡Importante!
+Si no declaramos ningún constructor, Java proporciona automáticamente un
+**constructor por defecto sin parámetros**. Sin embargo, cuando
+declaramos nuestros propios constructores, Java deja de proporcionar ese
+constructor automáticamente.
+
+**En resumen:** el constructor permite que un objeto nazca con un estado
+inicial definido, evitando tener que asignar sus atributos uno por uno
+después de crearlo.
+
 #### Tema: El operador new y el manejo de memoria
 #### Tema: Coml se define el stack y el heap
 #### Tema: Muchos objetos de una misma clase y sus respectivos espacios en memoria
