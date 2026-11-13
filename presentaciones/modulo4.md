@@ -396,7 +396,196 @@ cuenta1 = null;
 Al asignar `null`, la variable `cuenta1` deja de hacer referencia al objeto. Si ninguna otra referencia apunta a él, el objeto queda disponible para que el Garbage Collector recupere su memoria.
 **Importante:** el Garbage Collector no necesariamente elimina el objeto inmediatamente; Java decide cuándo realizar la recolección. La manera en que trabaja el recolector de basura también depende de la versión de Java, dado que los algoritmos han ido cambiando a lo largo de su historia.
 
-Tema: Coml se define el stack y el heap
+#### Tema: Coml se define el stack y el heap
+# Stack y Heap: manejo de memoria en Java
+
+Cuando declaramos variables y creamos objetos en Java, la JVM utiliza diferentes regiones de memoria para almacenar la información.
+
+Dos regiones importantes son:
+
+- **Stack (Pila):** almacena, entre otras cosas, las variables locales de los métodos y sus valores primitivos o referencias.
+- **Heap (Montículo):** almacena los objetos creados durante la ejecución del programa.
+
+## 1. Variables primitivas
+
+Los tipos de datos primitivos de Java son:
+
+`byte`, `short`, `int`, `long`, `float`, `double`, `char` y `boolean`.
+
+Cuando declaramos una variable primitiva local, su valor se almacena directamente en el marco de ejecución del método, que se encuentra en el Stack.
+
+**Ejemplo:**
+
+```java
+int edad = 25;
+double saldo = 1500.50;
+char inicial = 'A';
+boolean activo = true;
+```
+
+Representación conceptual:
+
+```text
+             STACK
+    ┌──────────────────────┐
+    │                      │
+    │   edad = 25          │
+    │                      │
+    │   saldo = 1500.50    │
+    │                      │
+    │   inicial = 'A'      │
+    │                      │
+    │   activo = true      │
+    │                      │
+    └──────────────────────┘
+
+             HEAP
+    ┌──────────────────────┐
+    │                      │
+    │     (Sin objetos)    │
+    │                      │
+    └──────────────────────┘
+```
+
+En este caso, no se ha creado ningún objeto. Los valores de las variables primitivas locales se almacenan directamente en sus respectivas ubicaciones.
+
+## 2. Construcción de objetos
+
+Cuando utilizamos el operador `new`, Java crea un objeto y reserva memoria para él en el Heap.
+
+La variable que recibe el resultado de esa operación almacena una referencia que permite acceder al objeto.
+
+**Ejemplo:**
+
+```java
+Cuenta cuenta1 = new Cuenta("Ana", 1500.0);
+```
+
+Representación conceptual:
+
+```text
+             STACK
+    ┌──────────────────────┐
+    │                      │
+    │   cuenta1 ───────────────┐
+    │                      │  │
+    └──────────────────────┘  │
+                              │
+                              ▼
+             HEAP
+    ┌──────────────────────┐
+    │                      │
+    │    OBJETO CUENTA     │
+    │                      │
+    │   titular = "Ana"    │
+    │   saldo = 1500.0     │
+    │                      │
+    └──────────────────────┘
+```
+
+Observa que:
+
+- `cuenta1` es una variable que contiene una referencia.
+- El objeto `Cuenta` se encuentra en el Heap.
+- Los atributos del objeto forman parte de su espacio de memoria.
+
+## 3. ¿Qué sucede con los tipos primitivos dentro de un objeto?
+
+Un detalle importante es que los atributos primitivos de un objeto forman parte de la memoria ocupada por ese objeto en el Heap.
+
+**Ejemplo:**
+
+```java
+public class Cuenta {
+
+    String titular;
+    double saldo;
+    int numeroCuenta;
+
+}
+```
+
+Cuando creamos una cuenta:
+
+```java
+Cuenta cuenta1 = new Cuenta();
+```
+
+La representación conceptual es:
+
+```text
+             STACK
+    ┌──────────────────────┐
+    │                      │
+    │   cuenta1 ───────────────┐
+    │                      │  │
+    └──────────────────────┘  │
+                              │
+                              ▼
+             HEAP
+    ┌────────────────────────────┐
+    │       OBJETO CUENTA        │
+    │                            │
+    │   titular ─────────────┐   │
+    │                        │   │
+    │   saldo = 0.0           │   │
+    │                        │   │
+    │   numeroCuenta = 0      │   │
+    │                            │
+    └────────────────────────────┘
+                             │
+                             ▼
+                      Objeto String
+                      (en el Heap)
+```
+
+En este caso:
+
+- `saldo` y `numeroCuenta` son atributos primitivos y forman parte del objeto.
+- `titular` es una referencia a otro objeto de tipo `String`.
+- Los atributos primitivos tienen valores iniciales por defecto cuando se crea el objeto: `0.0` y `0`, respectivamente.
+- Las referencias de instancia tienen como valor inicial `null`.
+
+## 4. ¿Qué sucede cuando dos variables hacen referencia al mismo objeto?
+
+En Java, podemos asignar una referencia a otra variable. Esto no crea un nuevo objeto, sino que ambas variables pueden apuntar al mismo objeto.
+
+**Ejemplo:**
+
+```java
+Cuenta cuenta1 = new Cuenta();
+
+Cuenta cuenta2 = cuenta1;
+```
+
+Representación conceptual:
+
+```text
+             STACK
+    ┌──────────────────────┐
+    │                      │
+    │   cuenta1 ───────────────┐
+    │                      │  │
+    │   cuenta2 ───────────────┤
+    │                      │  │
+    └──────────────────────┘  │
+                              │
+                              ▼
+             HEAP
+    ┌──────────────────────┐
+    │                      │
+    │    OBJETO CUENTA     │
+    │                      │
+    │   titular = null     │
+    │   saldo = 0.0        │
+    │   numeroCuenta = 0   │
+    │                      │
+    └──────────────────────┘
+```
+
+Ambas variables contienen una referencia al mismo objeto.
+Por lo tanto, si modificamos el objeto utilizando `cuenta1`, los cambios también serán visibles cuando accedamos a él mediante `cuenta2`.
+
 #### Tema: Muchos objetos de una misma clase y sus respectivos espacios en memoria
 #### Tema: Modificacion de los.valores de atributos con el.operador punto
 #### Tema: Repasamos la firma de un metodo. Para mejorar la intro
