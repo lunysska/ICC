@@ -340,7 +340,63 @@ inicial definido, evitando tener que asignar sus atributos uno por uno
 después de crearlo.
 
 #### Tema: El operador new y el manejo de memoria
-#### Tema: Coml se define el stack y el heap
+# El operador `new` y el manejo de memoria en Java
+
+El operador **`new`** permite crear objetos en Java. Cuando se utiliza, se reserva espacio en memoria para almacenar el objeto y se invoca su constructor para inicializarlo.
+
+## 1. El operador `new`
+
+Su función principal es crear una instancia de una clase.
+
+**Ejemplo:**
+
+```java
+public class Principal {
+    public static void main(String[] args) {
+
+        Cuenta cuenta1 = new Cuenta("Ana", 1500.0);
+
+    }
+}
+```
+
+En esta instrucción ocurren tres cosas:
+
+1. `new` solicita memoria para crear un nuevo objeto de tipo `Cuenta`.
+2. Se ejecuta el constructor `Cuenta()`, que inicializa sus atributos.
+3. Se devuelve una referencia al objeto creado, que se almacena en la variable `cuenta1`.
+
+## 2. ¿Dónde se almacenan los objetos?
+
+En Java, los objetos se almacenan en una región de memoria llamada **Heap (montículo)**.
+Por otra parte, las variables locales y las referencias que se utilizan durante la ejecución de los métodos se almacenan normalmente en la memoria **Stack (pila)**.
+
+Por ejemplo:
+
+```java
+Cuenta cuenta1 = new Cuenta("Ana", 1500.0);
+```
+
+Podemos entenderlo conceptualmente así:
+- **Stack:** contiene la variable `cuenta1`, que almacena una referencia al objeto.
+- **Heap:** contiene el objeto `Cuenta`, con sus atributos `titular` y `saldo`.
+
+## 3. ¿Qué sucede cuando un objeto deja de utilizarse?
+
+Java administra automáticamente la memoria mediante un mecanismo llamado **Garbage Collector (recolector de basura)**.
+Este mecanismo identifica los objetos que ya no son accesibles desde el programa y recupera la memoria que ocupan.
+
+Por ejemplo:
+
+```java
+Cuenta cuenta1 = new Cuenta("Ana", 1500.0);
+
+cuenta1 = null;
+```
+Al asignar `null`, la variable `cuenta1` deja de hacer referencia al objeto. Si ninguna otra referencia apunta a él, el objeto queda disponible para que el Garbage Collector recupere su memoria.
+**Importante:** el Garbage Collector no necesariamente elimina el objeto inmediatamente; Java decide cuándo realizar la recolección. La manera en que trabaja el recolector de basura también depende de la versión de Java, dado que los algoritmos han ido cambiando a lo largo de su historia.
+
+Tema: Coml se define el stack y el heap
 #### Tema: Muchos objetos de una misma clase y sus respectivos espacios en memoria
 #### Tema: Modificacion de los.valores de atributos con el.operador punto
 #### Tema: Repasamos la firma de un metodo. Para mejorar la intro
