@@ -587,7 +587,9 @@ Ambas variables contienen una referencia al mismo objeto.
 Por lo tanto, si modificamos el objeto utilizando `cuenta1`, los cambios también serán visibles cuando accedamos a él mediante `cuenta2`.
 
 #### Tema: Muchos objetos de una misma clase y sus respectivos espacios en memoria
-#### Tema: Modificacion de los.valores de atributos con el.operador punto
+Cuando creamos varios objetos de una misma clase, cada uno tendrá su propio espacio de memoria para almacenar sus atributos. Esto significa que, aunque todos los objetos se construyan a partir de la misma clase, sus datos son independientes.
+![Múltiples objetos de una misma clase en Stack y Heap](imagenes/cuentas-stack-heap.png)
+
 #### Tema: Repasamos la firma de un metodo. Para mejorar la intro
 #### Tema: El constructor por omision y su perdida
 #### Tema: Y vimos diferentes constructores por sustitucion, es decir, uno sustituye al otro
