@@ -590,7 +590,6 @@ Por lo tanto, si modificamos el objeto utilizando `cuenta1`, los cambios tambié
 Cuando creamos varios objetos de una misma clase, cada uno tendrá su propio espacio de memoria para almacenar sus atributos. Esto significa que, aunque todos los objetos se construyan a partir de la misma clase, sus datos son independientes.
 ![Múltiples objetos de una misma clase en Stack y Heap](imagenes/cuentasStackHeap.png)
 
-#### Tema: Repasamos la firma de un metodo. Para mejorar la intro
 #### Tema: El constructor por omision y su perdida
 #### Tema: Y vimos diferentes constructores por sustitucion, es decir, uno sustituye al otro
 
