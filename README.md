@@ -16,5 +16,5 @@ Temario
 12. [Hilos de ejecución (opcional)](presentaciones/modulo12.md)
 13. Límites de la tecnología computacional <br>
 
-[Exámenes](presentaciones/examenes.md)
-[Entregas](presentaciones/entregas.md)
+[Exámenes](presentaciones/examenes.md)<br>
+[Entregas](presentaciones/entregas.md)<br>
