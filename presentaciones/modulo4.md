@@ -645,8 +645,63 @@ public Cuenta() {
 }
 ```
 
+#### Tema: Constructores por sustitución.
+#### Diferentes constructores por sustitución
 
-#### Tema: Y vimos diferentes constructores por sustitucion, es decir, uno sustituye al otro
+En Java, cuando una clase declara varios constructores, cada uno puede tener diferentes parámetros. Sin embargo, **declarar un constructor propio elimina la disponibilidad automática del constructor por omisión**.
+
+Es decir, un constructor no sustituye físicamente a otro: lo que sucede es que, al declarar al menos un constructor, el compilador deja de generar el constructor sin parámetros.
+
+**Ejemplo:**
+
+```java
+public class Cuenta {
+    String titular;
+    double saldo;
+
+    public Cuenta(String titular) {
+        this.titular = titular;
+    }
+}
+```
+
+En este caso, podemos crear objetos indicando el titular:
+
+```java
+Cuenta cuenta1 = new Cuenta("Ana");
+```
+
+Pero ya no podemos crear objetos sin argumentos:
+
+```java
+Cuenta cuenta2 = new Cuenta(); // Error
+```
+
+Si necesitamos ambas posibilidades, debemos declarar los dos constructores:
+
+```java
+public class Cuenta {
+    String titular;
+    double saldo;
+
+    public Cuenta() {
+    }
+
+    public Cuenta(String t) {
+        titular = t;
+    }
+}
+```
+
+Ahora podemos crear objetos de ambas formas:
+
+```java
+Cuenta cuenta1 = new Cuenta();
+Cuenta cuenta2 = new Cuenta("Ana");
+```
+
+**Importante:** Los constructores no se sustituyen automáticamente entre sí. Cada constructor declarado está disponible según sus parámetros. El constructor por omisión generado por el compilador desaparece cuando declaramos cualquier constructor.
+
 
 ### Sesión 2. Ayudantía de Teoría
 #### Tema: El método printf
