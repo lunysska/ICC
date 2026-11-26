@@ -591,6 +591,61 @@ Cuando creamos varios objetos de una misma clase, cada uno tendrá su propio esp
 ![Múltiples objetos de una misma clase en Stack y Heap](imagenes/cuentasStackHeap.png)
 
 #### Tema: El constructor por omision y su perdida
+#### El constructor por omisión y su pérdida
+
+En Java, cuando una clase no declara ningún constructor, el compilador proporciona automáticamente un **constructor por omisión (default)**, que permite crear objetos sin especificar valores iniciales.
+
+**Ejemplo:**
+
+```java
+public class Cuenta {
+    String titular;
+    double saldo;
+}
+```
+
+Podemos crear un objeto así:
+
+```java
+Cuenta cuenta1 = new Cuenta();
+```
+
+**¿Qué sucede cuando declaramos un constructor?**
+
+Si escribimos nuestro propio constructor, Java deja de proporcionar automáticamente el constructor por omisión.
+
+```java
+public class Cuenta {
+    String titular;
+    double saldo;
+
+    public Cuenta(String titular, double saldo) {
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+}
+```
+
+Ahora, esta instrucción ya no es válida:
+
+```java
+Cuenta cuenta1 = new Cuenta(); // Error
+```
+
+Debemos proporcionar los argumentos que solicita el constructor:
+
+```java
+Cuenta cuenta1 = new Cuenta("Ana", 1500.0);
+```
+
+**Importante:** Si necesitamos conservar la posibilidad de crear objetos sin argumentos, debemos declarar explícitamente un constructor sin parámetros:
+
+```java
+public Cuenta() {
+}
+```
+
+
 #### Tema: Y vimos diferentes constructores por sustitucion, es decir, uno sustituye al otro
 
 ### Sesión 2. Ayudantía de Teoría
