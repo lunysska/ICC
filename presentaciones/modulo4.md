@@ -594,6 +594,7 @@ Cuando creamos varios objetos de una misma clase, cada uno tendrá su propio esp
 #### El constructor por omisión y su pérdida
 
 En Java, cuando una clase no declara ningún constructor, el compilador proporciona automáticamente un **constructor por omisión (default)**, que permite crear objetos sin especificar valores iniciales.
+Internamente, permite crear el objeto e inicializa todos sus atributos de instancia con los valores predeterminados correspondientes a sus tipos de datos (por ejemplo, 0 para tipos numéricos, false para boolean y null para referencias).
 
 **Ejemplo:**
 
