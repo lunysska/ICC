@@ -17,3 +17,4 @@ Temario
 13. Límites de la tecnología computacional <br>
 
 [Exámenes](presentaciones/examenes.md)
+[Entregas](presentaciones/entregas.md)
